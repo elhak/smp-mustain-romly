@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMP DR MUSTA'IN ROMLY - Mapan IT & Berkarakter</title>
+    <meta name="description" content="SMP DR MUSTA'IN ROMLY - Sekolah unggulan dengan fokus pada pendidikan IT dan pembentukan karakter. Daftar online sekarang.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        'primary-dark': '#1e3a8a',
+                        'primary-light': '#3b82f6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .fade-in { animation: fadeIn 0.6s ease-in; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #1e40af;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-heading font-bold text-lg">
+                        S
+                    </div>
+                    <span class="font-heading font-semibold text-slate-800 hidden sm:block">SMP DR MUSTA'IN ROMLY</span>
+                </div>
+                
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#tentang" class="text-slate-600 hover:text-primary transition-colors">Tentang</a>
+                    <a href="#fasilitas" class="text-slate-600 hover:text-primary transition-colors">Fasilitas</a>
+                    <a href="#daftar" class="text-slate-600 hover:text-primary transition-colors">Pendaftaran</a>
+                    <a href="#kontak" class="text-slate-600 hover:text-primary transition-colors">Kontak</a>
+                </div>
+                
+                <a href="#daftar" class="hidden md:inline-flex bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-lg font-medium transition-all hover:scale-[1.02] shadow-md hover:shadow-lg">
+                    Daftar Sekarang
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-3 space-y-2">
+                <a href="#tentang" class="block py-2 text-slate-600 hover:text-primary">Tentang</a>
+                <a href="#fasilitas" class="block py-2 text-slate-600 hover:text-primary">Fasilitas</a>
+                <a href="#daftar" class="block py-2 text-slate-600 hover:text-primary">Pendaftaran</a>
+                <a href="#kontak" class="block py-2 text-slate-600 hover:text-primary">Kontak</a>
+                <a href="#daftar" class="block bg-primary text-white text-center py-2.5 rounded-lg font-medium mt-3">Daftar Sekarang</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-16 bg-gradient-to-br from-blue-50 via-white to-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 lg:py-0">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left fade-in">
+                    <div class="inline-flex items-center gap-2 bg-blue-100 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+                        <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                        Pendaftaran Siswa Baru 2026/2027 Dibuka
+                    </div>
+                    
+                    <div class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center text-white font-heading font-bold text-3xl mx-auto lg:mx-0 mb-6 shadow-lg">
+                        S
+                    </div>
+                    
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-4">
+                        SMP DR MUSTA'IN ROMLY
+                    </h1>
+                    <div class="w-24 h-1 bg-primary mx-auto lg:mx-0 mb-6"></div>
+                    <p class="text-xl sm:text-2xl text-slate-600 mb-8 font-medium">
+                        Mapan IT & Berkarakter
+                    </p>
+                    <p class="text-slate-500 mb-8 max-w-lg mx-auto lg:mx-0">
+                        Sekolah unggulan yang memadukan pendidikan berkualitas dengan teknologi modern dan pembentukan karakter islami untuk generasi masa depan.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#daftar" class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-semibold transition-all hover:scale-[1.02] shadow-lg hover:shadow-xl">
+                            Daftar Sekarang
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                        <a href="#tentang" class="inline-flex items-center justify-center gap-2 border-2 border-slate-300 hover:border-primary text-slate-700 hover:text-primary px-8 py-4 rounded-xl font-semibold transition-all">
+                            Pelajari Lebih
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-light/20 rounded-3xl transform rotate-3"></div>
+                        <div class="relative bg-white p-8 rounded-3xl shadow-2xl">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-blue-50 p-6 rounded-2xl text-center">
+                                    <div class="text-3xl font-bold text-primary mb-1">15+</div>
+                                    <div class="text-sm text-slate-600">Tahun Pengalaman</div>
+                                </div>
+                                <div class="bg-blue-50 p-6 rounded-2xl text-center">
+                                    <div class="text-3xl font-bold text-primary mb-1">1000+</div>
+                                    <div class="text-sm text-slate-600">Alumni Sukses</div>
+                                </div>
+                                <div class="bg-blue-50 p-6 rounded-2xl text-center">
+                                    <div class="text-3xl font-bold text-primary mb-1">50+</div>
+                                    <div class="text-sm text-slate-600">Guru Berpengalaman</div>
+                                </div>
+                                <div class="bg-blue-50 p-6 rounded-2xl text-center">
+                                    <div class="text-3xl font-bold text-primary mb-1">A</div>
+                                    <div class="text-sm text-slate-600">Akreditasi</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <span class="text-primary font-semibold text-sm tracking-wider uppercase">Tentang Kami</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
+                    Profil SMP DR MUSTA'IN ROMLY
+                </h2>
+                <div class="w-16 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                    SMP DR MUSTA'IN ROMLY adalah sekolah menengah pertama yang berkomitmen untuk memberikan pendidikan berkualitas dengan mengintegrasikan teknologi informasi dan pembentukan karakter islami.
+                </p>
+                <p class="text-slate-500">
+                    Kami percaya bahwa setiap siswa memiliki potensi yang unik. Melalui pendekatan pembelajaran yang inovatif dan lingkungan yang mendukung, kami membantu siswa mengembangkan kemampuan akademik dan soft skills yang dibutuhkan untuk sukses di era digital.
+                </p>
+            </div>
+            
+            <!-- Highlight Cards -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-8 rounded-2xl hover:shadow-xl transition-all hover:-translate-y-1 group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Pendidikan Berkualitas</h3>
+                    <p class="text-slate-600">Kurikulum terstandar nasional dengan pengajar profesional dan berpengalaman di bidangnya.</p>
+                </div>
+                
+                <div class="bg-slate-50 p-8 rounded-2xl hover:shadow-xl transition-all hover:-translate-y-1 group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Fasilitas Modern</h3>
+                    <p class="text-slate-600">Lab komputer lengkap, perpustakaan digital, dan ruang kelas yang nyaman untuk pembelajaran optimal.</p>
+                </div>
+                
+                <div class="bg-slate-50 p-8 rounded-2xl hover:shadow-xl transition-all hover:-translate-y-1 group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Pembentukan Karakter</h3>
+                    <p class="text-slate-600">Pendidikan akhlak, disiplin, dan kepemimpinan untuk membentuk generasi yang berkarakter mulia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fasilitas Section -->
+    <section id="fasilitas" class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <span class="text-primary font-semibold text-sm tracking-wider uppercase">Fasilitas</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
+                    Fasilitas Unggulan Kami
+                </h2>
+                <div class="w-16 h-1 bg-primary mx-auto mb-4"></div>
+                <p class="text-slate-600 max-w-2xl mx-auto">Dukungan fasilitas modern untuk mendukung proses pembelajaran yang optimal</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-56 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-primary/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Lab Komputer</h3>
+                        <p class="text-slate-600">Laboratorium komputer dengan perangkat terbaru dan koneksi internet cepat untuk praktik pembelajaran IT.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-56 bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-amber-600/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Perpustakaan</h3>
+                        <p class="text-slate-600">Koleksi buku lengkap dengan ruang baca nyaman dan akses ke perpustakaan digital.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-56 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-green-600/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Ruang Kelas</h3>
+                        <p class="text-slate-600">Ruang kelas yang nyaman, bersih, dan dilengkapi dengan proyektor serta AC untuk kenyamanan belajar.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-56 bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-purple-600/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Lapangan & Ekstrakurikuler</h3>
+                        <p class="text-slate-600">Lapangan olahraga luas dan berbagai kegiatan ekstrakurikuler untuk pengembangan bakat siswa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Pendaftaran Section -->
+    <section id="daftar" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="text-center mb-12">
+                <span class="text-primary font-semibold text-sm tracking-wider uppercase">Pendaftaran</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
+                    Daftar Sekarang
+                </h2>
+                <div class="w-16 h-1 bg-primary mx-auto mb-4"></div>
+                <p class="text-slate-600">Isi formulir di bawah untuk mendaftarkan putra/putri Anda</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl p-8 sm:p-10 border border-slate-100">
+                <form id="registration-form" class="space-y-6">
+                    <div>
+                        <label for="nama-siswa" class="block text-sm font-medium text-slate-700 mb-2">
+                            Nama Lengkap Siswa <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="nama-siswa" name="nama_siswa" required
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none"
+                            placeholder="Masukkan nama lengkap siswa">
+                    </div>
+                    
+                    <div>
+                        <label for="nama-ortu" class="block text-sm font-medium text-slate-700 mb-2">
+                            Nama Orang Tua/Wali <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="nama-ortu" name="nama_ortu" required
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none"
+                            placeholder="Masukkan nama orang tua/wali">
+                    </div>
+                    
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="no-hp" class="block text-sm font-medium text-slate-700 mb-2">
+                                Nomor HP/WA <span class="text-red-500">*</span>
+                            </label>
+                            <input type="tel" id="no-hp" name="no_hp" required
+                                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none"
+                                placeholder="Contoh: 08123456789">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700 mb-2">
+                                Email
+                            </label>
+                            <input type="email" id="email" name="email"
+                                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none"
+                                placeholder="email@example.com">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="asal-sekolah" class="block text-sm font-medium text-slate-700 mb-2">
+                            Asal Sekolah (SD) <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="asal-sekolah" name="asal_sekolah" required
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none"
+                            placeholder="Masukkan nama SD asal">
+                    </div>
+                    
+                    <div>
+                        <label for="alamat" class="block text-sm font-medium text-slate-700 mb-2">
+                            Alamat Lengkap <span class="text-red-500">*</span>
+                        </label>
+                        <textarea id="alamat" name="alamat" rows="3" required
+                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none resize-none"
+                            placeholder="Masukkan alamat lengkap rumah"></textarea>
+                    </div>
+                    
+                    <button type="submit" id="submit-btn"
+                        class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-4 rounded-xl transition-all hover:scale-[1.02] shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                        <span id="btn-text">Kirim Pendaftaran</span>
+                        <div id="btn-loader" class="loader hidden"></div>
+                    </button>
+                </form>
+                
+                <!-- Success Message -->
+                <div id="success-message" class="hidden text-center py-8">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Pendaftaran Berhasil!</h3>
+                    <p class="text-slate-600">Terima kasih telah mendaftar. Tim kami akan menghubungi Anda segera.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="kontak" class="bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <span class="text-primary-light font-semibold text-sm tracking-wider uppercase">Kontak Kami</span>
+                    <h2 class="font-heading text-3xl font-bold mt-3 mb-6">Hubungi Kami</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Alamat</h4>
+                                <p class="text-slate-400">Jl. Pendidikan No. 123, Kota Anda, Indonesia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Telepon</h4>
+                                <p class="text-slate-400">(021) 1234-5678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email</h4>
+                                <p class="text-slate-400">info@smpmustainromly.sch.id</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-slate-800 rounded-2xl p-4 h-64">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0!2d106.0!3d-6.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMCcwMC4wUyAxMDbCsDAwJzAwLjBF!5e0!3m2!1sen!2sid!4v1"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; border-radius: 12px;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            class="rounded-xl">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-slate-400 text-sm">
+                        © 2026 SMP DR MUSTA'IN ROMLY. All rights reserved.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Form submission
+        const form = document.getElementById('registration-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const btnLoader = document.getElementById('btn-loader');
+        const successMessage = document.getElementById('success-message');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.textContent = 'Mengirim...';
+            btnLoader.classList.remove('hidden');
+            
+            // Collect form data
+            const formData = {
+                nama_siswa: document.getElementById('nama-siswa').value,
+                nama_ortu: document.getElementById('nama-ortu').value,
+                no_hp: document.getElementById('no-hp').value,
+                email: document.getElementById('email').value,
+                asal_sekolah: document.getElementById('asal-sekolah').value,
+                alamat: document.getElementById('alamat').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            try {
+                // TODO: Replace with actual Google Sheets API endpoint
+                // For now, simulate API call
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                // Hide form and show success
+                form.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+                
+                // Log data (for debugging)
+                console.log('Form submitted:', formData);
+                
+            } catch (error) {
+                alert('Terjadi kesalahan. Silakan coba lagi.');
+                console.error('Error:', error);
+                
+                // Reset button
+                submitBtn.disabled = false;
+                btnText.textContent = 'Kirim Pendaftaran';
+                btnLoader.classList.add('hidden');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
