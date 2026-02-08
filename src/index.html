@@ -705,21 +705,26 @@
                 no_hp: document.getElementById('no-hp').value,
                 email: document.getElementById('email').value,
                 asal_sekolah: document.getElementById('asal-sekolah').value,
-                alamat: document.getElementById('alamat').value,
-                timestamp: new Date().toISOString()
+                alamat: document.getElementById('alamat').value
             };
             
             try {
-                // TODO: Replace with actual Google Sheets API endpoint
-                // For now, simulate API call
-                await new Promise(resolve => setTimeout(resolve, 1500));
+                // Send to backend API
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
                 
-                // Hide form and show success
-                form.classList.add('hidden');
-                successMessage.classList.remove('hidden');
+                const data = await response.json();
                 
-                // Log data (for debugging)
-                console.log('Form submitted:', formData);
+                if (data.success) {
+                    // Hide form and show success
+                    form.classList.add('hidden');
+                    successMessage.classList.remove('hidden');
+                } else {
+                    throw new Error(data.error || 'Terjadi kesalahan');
+                }
                 
             } catch (error) {
                 alert('Terjadi kesalahan. Silakan coba lagi.');
@@ -727,6 +732,10 @@
                 
                 // Reset button
                 submitBtn.disabled = false;
+                btnText.textContent = 'Kirim Pendaftaran';
+                btnLoader.classList.add('hidden');
+            }
+        });
                 btnText.textContent = 'Kirim Pendaftaran';
                 btnLoader.classList.add('hidden');
             }
