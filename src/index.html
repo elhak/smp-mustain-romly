@@ -562,14 +562,23 @@
                 </form>
                 
                 <!-- Success Message -->
-                <div id="success-message" class="hidden text-center py-8">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div id="success-message" class="hidden text-center py-12">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
+                        <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Pendaftaran Berhasil!</h3>
-                    <p class="text-slate-600">Terima kasih telah mendaftar. Tim kami akan menghubungi Anda segera.</p>
+                    <h3 class="font-heading text-2xl font-bold text-slate-900 mb-4">Pendaftaran Berhasil! 🎉</h3>
+                    <p class="text-slate-600 text-lg mb-2">Terima kasih telah mendaftar.</p>
+                    <p class="text-slate-500">Tim kami akan menghubungi Anda segera melalui WhatsApp/telepon yang terdaftar.</p>
+                    <div class="mt-8">
+                        <a href="/" class="inline-flex items-center gap-2 text-primary hover:underline">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                            </svg>
+                            Kembali ke Beranda
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -683,15 +692,17 @@
             });
         });
         
-        // Form submission
+        // Form submission - FIXED: Proper async with preventDefault
         const form = document.getElementById('registration-form');
         const submitBtn = document.getElementById('submit-btn');
         const btnText = document.getElementById('btn-text');
         const btnLoader = document.getElementById('btn-loader');
         const successMessage = document.getElementById('success-message');
         
-        form.addEventListener('submit', async (e) => {
+        form.addEventListener('submit', async function(e) {
+            // CRITICAL: Prevent form from submitting normally
             e.preventDefault();
+            e.stopPropagation();
             
             // Show loading state
             submitBtn.disabled = true;
@@ -700,35 +711,39 @@
             
             // Collect form data
             const formData = {
-                nama_siswa: document.getElementById('nama-siswa').value,
-                nama_ortu: document.getElementById('nama-ortu').value,
-                no_hp: document.getElementById('no-hp').value,
-                email: document.getElementById('email').value,
-                asal_sekolah: document.getElementById('asal-sekolah').value,
-                alamat: document.getElementById('alamat').value
+                nama_siswa: document.getElementById('nama-siswa').value.trim(),
+                nama_ortu: document.getElementById('nama-ortu').value.trim(),
+                no_hp: document.getElementById('no-hp').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                asal_sekolah: document.getElementById('asal-sekolah').value.trim(),
+                alamat: document.getElementById('alamat').value.trim()
             };
             
             try {
                 // Send to backend API
                 const response = await fetch('https://smp-mustain-romly.boosq.workers.dev/api/register', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
                     body: JSON.stringify(formData)
                 });
                 
                 const data = await response.json();
                 
                 if (data.success) {
-                    // Hide form and show success
-                    form.classList.add('hidden');
+                    // Hide form and show success (NO PAGE REFRESH)
+                    form.style.display = 'none';
                     successMessage.classList.remove('hidden');
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 } else {
                     throw new Error(data.error || 'Terjadi kesalahan');
                 }
                 
             } catch (error) {
-                alert('Terjadi kesalahan. Silakan coba lagi.');
                 console.error('Error:', error);
+                alert('Terjadi kesalahan. Silakan coba lagi.\n\nError: ' + error.message);
                 
                 // Reset button
                 submitBtn.disabled = false;
@@ -736,10 +751,9 @@
                 btnLoader.classList.add('hidden');
             }
         });
-                btnText.textContent = 'Kirim Pendaftaran';
-                btnLoader.classList.add('hidden');
-            }
-        });
+        
+        // Prevent any default form submission
+        form.setAttribute('onsubmit', 'return false;');
         
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
