@@ -3,20 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMP DR MUSTA'IN ROMLY - Mapan IT & Berkarakter</title>
-    <meta name="description" content="SMP DR MUSTA'IN ROMLY - Sekolah unggulan dengan fokus pada pendidikan IT dan pembentukan karakter. Daftar online sekarang.">
+    <title>SMP Dr. Musta'in Romly (SMP SPARTA) - Sekolah Berakhlak Pesantren</title>
+    <meta name="description" content="SMP Dr. Musta'in Romly (SMP SPARTA) - Sekolah Menengah Pertama Unggulan Berbasis Adab. Mewujudkan sekolah berakhlak pesantren yang nyaman, relevan, dan membangunakan.">
+    <meta name="keywords" content="SMP SPARTA, SMP Dr. Mustain Romly, sekolah berakhlak, pesantren, adab, Lamongan">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="SMP Dr. Musta'in Romly (SMP SPARTA)">
+    <meta property="og:description" content="Sekolah Menengah Pertama Unggulan Berbasis Adab">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1e40af',
-                        'primary-dark': '#1e3a8a',
-                        'primary-light': '#3b82f6',
+                        'sparta-green': '#1a5f2a',
+                        'sparta-green-light': '#2d8a4e',
+                        'sparta-green-accent': '#4caf50',
+                        'sparta-gold': '#d4af37',
+                        'sparta-gold-light': '#f4d03f',
+                        'sparta-cream': '#f9f7f0',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -26,6 +39,7 @@
             }
         }
     </script>
+    
     <style>
         html { scroll-behavior: smooth; }
         .fade-in { animation: fadeIn 0.6s ease-in; }
@@ -33,9 +47,15 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        .sparta-gradient {
+            background: linear-gradient(135deg, #1a5f2a 0%, #2d8a4e 50%, #1a5f2a 100%);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+        }
         .loader {
             border: 3px solid #f3f3f3;
-            border-top: 3px solid #1e40af;
+            border-top: 3px solid #1a5f2a;
             border-radius: 50%;
             width: 20px;
             height: 20px;
@@ -45,37 +65,51 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .sparta-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
-<body class="font-sans text-slate-800 antialiased">
+<body class="font-sans text-slate-800 antialiased bg-white">
+    
     <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-md z-50 border-b-2 border-sparta-gold">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-heading font-bold text-lg">
+                    <div class="w-12 h-12 sparta-gradient rounded-xl flex items-center justify-center text-white font-heading font-bold text-xl shadow-lg">
                         S
                     </div>
-                    <span class="font-heading font-semibold text-slate-800 hidden sm:block">SMP DR MUSTA'IN ROMLY</span>
+                    <div class="hidden sm:block">
+                        <span class="font-heading font-bold text-sparta-green block leading-tight">SMP Dr. Musta'in Romly</span>
+                        <span class="text-xs text-sparta-gold font-semibold tracking-wider">SMP SPARTA</span>
+                    </div>
                 </div>
                 
                 <!-- Desktop Nav -->
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#tentang" class="text-slate-600 hover:text-primary transition-colors">Tentang</a>
-                    <a href="#visi-misi" class="text-slate-600 hover:text-primary transition-colors">Visi & Misi</a>
-                    <a href="#struktur" class="text-slate-600 hover:text-primary transition-colors">Struktur</a>
-                    <a href="#galeri" class="text-slate-600 hover:text-primary transition-colors">Galeri</a>
-                    <a href="#fasilitas" class="text-slate-600 hover:text-primary transition-colors">Fasilitas</a>
-                    <a href="#daftar" class="text-slate-600 hover:text-primary transition-colors">Pendaftaran</a>
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="#beranda" class="text-slate-600 hover:text-sparta-green font-medium transition-colors">Beranda</a>
+                    <a href="#filosofi" class="text-slate-600 hover:text-sparta-green font-medium transition-colors">Filosofi</a>
+                    <a href="#program" class="text-slate-600 hover:text-sparta-green font-medium transition-colors">Program</a>
+                    <a href="#fasilitas" class="text-slate-600 hover:text-sparta-green font-medium transition-colors">Fasilitas</a>
+                    <a href="#galeri" class="text-slate-600 hover:text-sparta-green font-medium transition-colors">Galeri</a>
+                    <a href="#daftar" class="bg-sparta-green hover:bg-sparta-green-light text-white px-6 py-2.5 rounded-full font-semibold transition-all hover:scale-105 shadow-lg hover:shadow-xl">
+                        Daftar Sekarang
+                    </a>
                 </div>
                 
-                <a href="#daftar" class="hidden md:inline-flex bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-lg font-medium transition-all hover:scale-[1.02] shadow-md hover:shadow-lg">
-                    Daftar Sekarang
-                </a>
-                
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-600 hover:text-sparta-green">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
@@ -83,78 +117,78 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-4 py-3 space-y-2">
-                <a href="#tentang" class="block py-2 text-slate-600 hover:text-primary">Tentang</a>
-                <a href="#visi-misi" class="block py-2 text-slate-600 hover:text-primary">Visi & Misi</a>
-                <a href="#struktur" class="block py-2 text-slate-600 hover:text-primary">Struktur</a>
-                <a href="#galeri" class="block py-2 text-slate-600 hover:text-primary">Galeri</a>
-                <a href="#fasilitas" class="block py-2 text-slate-600 hover:text-primary">Fasilitas</a>
-                <a href="#daftar" class="block py-2 text-slate-600 hover:text-primary">Pendaftaran</a>
-                <a href="#kontak" class="block py-2 text-slate-600 hover:text-primary">Kontak</a>
-                <a href="#daftar" class="block bg-primary text-white text-center py-2.5 rounded-lg font-medium mt-3">Daftar Sekarang</a>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-sparta-gold/20">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#beranda" class="block py-2 text-slate-600 hover:text-sparta-green font-medium">Beranda</a>
+                <a href="#filosofi" class="block py-2 text-slate-600 hover:text-sparta-green font-medium">Filosofi SPARTA</a>
+                <a href="#program" class="block py-2 text-slate-600 hover:text-sparta-green font-medium">Program Unggulan</a>
+                <a href="#fasilitas" class="block py-2 text-slate-600 hover:text-sparta-green font-medium">Fasilitas</a>
+                <a href="#galeri" class="block py-2 text-slate-600 hover:text-sparta-green font-medium">Galeri</a>
+                <a href="#daftar" class="block bg-sparta-green text-white text-center py-3 rounded-full font-semibold mt-4">Daftar Sekarang</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center pt-16 bg-gradient-to-br from-blue-50 via-white to-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 lg:py-0">
+    <section id="beranda" class="min-h-screen flex items-center pt-20 sparta-gradient relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-20 left-10 w-32 h-32 bg-white/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-48 h-48 bg-sparta-gold/10 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 lg:py-0">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="text-center lg:text-left fade-in">
-                    <div class="inline-flex items-center gap-2 bg-blue-100 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-                        <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                <div class="text-center lg:text-left text-white fade-in">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6 border border-white/20">
+                        <span class="w-2 h-2 bg-sparta-gold rounded-full animate-pulse"></span>
                         Pendaftaran Siswa Baru 2026/2027 Dibuka
                     </div>
                     
-                    <div class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center text-white font-heading font-bold text-3xl mx-auto lg:mx-0 mb-6 shadow-lg">
-                        S
-                    </div>
-                    
-                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-4">
-                        SMP DR MUSTA'IN ROMLY
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                        SMP Dr. Musta'in Romly
+                        <span class="block text-sparta-gold mt-2">(SMP SPARTA)</span>
                     </h1>
-                    <div class="w-24 h-1 bg-primary mx-auto lg:mx-0 mb-6"></div>
-                    <p class="text-xl sm:text-2xl text-slate-600 mb-8 font-medium">
-                        Mapan IT & Berkarakter
+                    
+                    <p class="text-xl sm:text-2xl text-white/90 mb-2 font-medium">
+                        Sekolah Menengah Pertama Unggulan Berbasis Adab
                     </p>
-                    <p class="text-slate-500 mb-8 max-w-lg mx-auto lg:mx-0">
-                        Sekolah unggulan yang memadukan pendidikan berkualitas dengan teknologi modern dan pembentukan karakter islami untuk generasi masa depan.
+                    
+                    <p class="text-white/80 mb-8 max-w-lg mx-auto lg:mx-0 text-lg">
+                        Mewujudkan sekolah berakhlak pesantren yang nyaman, relevan, dan membangunakan melalui program SPARTA
                     </p>
                     
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#daftar" class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-semibold transition-all hover:scale-[1.02] shadow-lg hover:shadow-xl">
+                        <a href="#daftar" class="inline-flex items-center justify-center gap-2 bg-sparta-gold hover:bg-sparta-gold-light text-sparta-green px-8 py-4 rounded-full font-bold transition-all hover:scale-105 shadow-lg hover:shadow-xl">
                             Daftar Sekarang
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                             </svg>
                         </a>
-                        <a href="#tentang" class="inline-flex items-center justify-center gap-2 border-2 border-slate-300 hover:border-primary text-slate-700 hover:text-primary px-8 py-4 rounded-xl font-semibold transition-all">
-                            Pelajari Lebih
+                        <a href="#program" class="inline-flex items-center justify-center gap-2 border-2 border-white/30 hover:border-white text-white px-8 py-4 rounded-full font-semibold transition-all hover:bg-white/10">
+                            Pelajari Program
                         </a>
                     </div>
                 </div>
                 
                 <div class="hidden lg:flex justify-center">
                     <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-light/20 rounded-3xl transform rotate-3"></div>
-                        <div class="relative bg-white p-8 rounded-3xl shadow-2xl">
+                        <div class="absolute inset-0 bg-sparta-gold/20 rounded-3xl transform rotate-3"></div>
+                        <div class="relative bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
                             <div class="grid grid-cols-2 gap-4">
-                                <div class="bg-blue-50 p-6 rounded-2xl text-center">
-                                    <div class="text-3xl font-bold text-primary mb-1">15+</div>
-                                    <div class="text-sm text-slate-600">Tahun Pengalaman</div>
+                                <div class="bg-white/10 p-6 rounded-2xl text-center">
+                                    <div class="text-3xl font-bold text-sparta-gold mb-1">15+</div>
+                                    <div class="text-sm text-white/80">Tahun Pengalaman</div>
                                 </div>
-                                <div class="bg-blue-50 p-6 rounded-2xl text-center">
-                                    <div class="text-3xl font-bold text-primary mb-1">1000+</div>
-                                    <div class="text-sm text-slate-600">Alumni Sukses</div>
+                                <div class="bg-white/10 p-6 rounded-2xl text-center">
+                                    <div class="text-3xl font-bold text-sparta-gold mb-1">1000+</div>
+                                    <div class="text-sm text-white/80">Alumni Sukses</div>
                                 </div>
-                                <div class="bg-blue-50 p-6 rounded-2xl text-center">
-                                    <div class="text-3xl font-bold text-primary mb-1">50+</div>
-                                    <div class="text-sm text-slate-600">Guru Berpengalaman</div>
+                                <div class="bg-white/10 p-6 rounded-2xl text-center">
+                                    <div class="text-3xl font-bold text-sparta-gold mb-1">SPARTA</div>
+                                    <div class="text-sm text-white/80">Program Unggulan</div>
                                 </div>
-                                <div class="bg-blue-50 p-6 rounded-2xl text-center">
-                                    <div class="text-3xl font-bold text-primary mb-1">A</div>
-                                    <div class="text-sm text-slate-600">Akreditasi</div>
+                                <div class="bg-white/10 p-6 rounded-2xl text-center">
+                                    <div class="text-3xl font-bold text-sparta-gold mb-1">A</div>
+                                    <div class="text-sm text-white/80">Akreditasi</div>
                                 </div>
                             </div>
                         </div>
@@ -164,124 +198,338 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="tentang" class="py-20 lg:py-28 bg-white">
+    <!-- Filosofi SPARTA Section -->
+    <section id="filosofi" class="py-20 lg:py-28 bg-sparta-cream">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="text-center mb-16">
-                <span class="text-primary font-semibold text-sm tracking-wider uppercase">Tentang Kami</span>
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
-                    Profil SMP DR MUSTA'IN ROMLY
+                <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Filosofi</span>
+                <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-sparta-green mt-3 mb-4">
+                    Filosofi SPARTA
                 </h2>
-                <div class="w-16 h-1 bg-primary mx-auto"></div>
-            </div>
-            
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                    SMP DR MUSTA'IN ROMLY adalah sekolah menengah pertama yang berkomitmen untuk memberikan pendidikan berkualitas dengan mengintegrasikan teknologi informasi dan pembentukan karakter islami.
-                </p>
-                <p class="text-slate-500">
-                    Kami percaya bahwa setiap siswa memiliki potensi yang unik. Melalui pendekatan pembelajaran yang inovatif dan lingkungan yang mendukung, kami membantu siswa mengembangkan kemampuan akademik dan soft skills yang dibutuhkan untuk sukses di era digital.
+                <div class="w-24 h-1 gold-gradient mx-auto rounded-full"></div>
+                <p class="text-slate-600 mt-4 max-w-2xl mx-auto">
+                    SPARTA adalah singkatan dari 6 nilai utama yang menjadi fondasi pendidikan di SMP Dr. Musta'in Romly
                 </p>
             </div>
             
-            <!-- Highlight Cards -->
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-slate-50 p-8 rounded-2xl hover:shadow-xl transition-all hover:-translate-y-1 group">
-                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
-                        </svg>
+            <!-- S.P.A.R.T.A. Circles -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-16">
+                <!-- S - Spiritual -->
+                <div class="text-center group">
+                    <div class="sparta-circle sparta-gradient mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        S
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Pendidikan Berkualitas</h3>
-                    <p class="text-slate-600">Kurikulum terstandar nasional dengan pengajar profesional dan berpengalaman di bidangnya.</p>
+                    <h3 class="font-heading font-bold text-sparta-green mb-1">Spiritual</h3>
+                    <p class="text-sm text-slate-600">Berakhlak Mulia</p>
                 </div>
                 
-                <div class="bg-slate-50 p-8 rounded-2xl hover:shadow-xl transition-all hover:-translate-y-1 group">
-                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
+                <!-- P - Professional -->
+                <div class="text-center group">
+                    <div class="sparta-circle sparta-gradient mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        P
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Fasilitas Modern</h3>
-                    <p class="text-slate-600">Lab komputer lengkap, perpustakaan digital, dan ruang kelas yang nyaman untuk pembelajaran optimal.</p>
+                    <h3 class="font-heading font-bold text-sparta-green mb-1">Professional</h3>
+                    <p class="text-sm text-slate-600">Profesional dalam Belajar</p>
                 </div>
                 
-                <div class="bg-slate-50 p-8 rounded-2xl hover:shadow-xl transition-all hover:-translate-y-1 group">
-                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                        </svg>
+                <!-- A - Adaptive -->
+                <div class="text-center group">
+                    <div class="sparta-circle sparta-gradient mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        A
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Pembentukan Karakter</h3>
-                    <p class="text-slate-600">Pendidikan akhlak, disiplin, dan kepemimpinan untuk membentuk generasi yang berkarakter mulia.</p>
+                    <h3 class="font-heading font-bold text-sparta-green mb-1">Adaptive</h3>
+                    <p class="text-sm text-slate-600">Adaptif terhadap Perubahan</p>
+                </div>
+                
+                <!-- R - Responsible -->
+                <div class="text-center group">
+                    <div class="sparta-circle sparta-gradient mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        R
+                    </div>
+                    <h3 class="font-heading font-bold text-sparta-green mb-1">Responsible</h3>
+                    <p class="text-sm text-slate-600">Bertanggung Jawab</p>
+                </div>
+                
+                <!-- T - Tough -->
+                <div class="text-center group">
+                    <div class="sparta-circle sparta-gradient mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        T
+                    </div>
+                    <h3 class="font-heading font-bold text-sparta-green mb-1">Tough</h3>
+                    <p class="text-sm text-slate-600">Tangguh dalam Tantangan</p>
+                </div>
+                
+                <!-- A - Achiever -->
+                <div class="text-center group">
+                    <div class="sparta-circle sparta-gradient mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        A
+                    </div>
+                    <h3 class="font-heading font-bold text-sparta-green mb-1">Achiever</h3>
+                    <p class="text-sm text-slate-600">Berprestasi</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Visi Misi Section -->
+    <!-- Visi, Misi, Prinsip Section -->
     <section id="visi-misi" class="py-20 lg:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="text-center mb-16">
-                <span class="text-primary font-semibold text-sm tracking-wider uppercase">Visi & Misi</span>
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
+                <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Visi & Misi</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-sparta-green mt-3 mb-4">
                     Arah dan Tujuan Kami
                 </h2>
-                <div class="w-16 h-1 bg-primary mx-auto"></div>
+                <div class="w-24 h-1 gold-gradient mx-auto rounded-full"></div>
             </div>
             
             <div class="grid lg:grid-cols-2 gap-12 items-stretch">
                 <!-- Visi -->
-                <div class="bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-8 sm:p-10 text-white shadow-xl">
+                <div class="sparta-gradient rounded-3xl p-8 sm:p-10 text-white shadow-2xl">
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
                             </svg>
                         </div>
-                        <h3 class="font-heading text-2xl font-bold">Visi</h3>
+                        <h3 class="font-heading text-3xl font-bold">Visi</h3>
                     </div>
-                    <p class="text-lg leading-relaxed text-white/90">
-                        Menjadi sekolah menengah pertama unggulan yang menghasilkan lulusan berprestasi, berakhlak mulia, dan siap bersaing di era globalisasi dengan menguasai teknologi informasi.
+                    <p class="text-xl leading-relaxed text-white/95">
+                        Menjadi sekolah menengah pertama unggulan yang menghasilkan lulusan <span class="text-sparta-gold font-semibold">berakhlak mulia</span>, <span class="text-sparta-gold font-semibold">adaptif</span>, dan <span class="text-sparta-gold font-semibold">berprestasi</span>.
                     </p>
                 </div>
                 
                 <!-- Misi -->
-                <div class="bg-slate-50 rounded-2xl p-8 sm:p-10 border border-slate-100">
+                <div class="bg-sparta-cream rounded-3xl p-8 sm:p-10 border-2 border-sparta-gold/20">
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                        <div class="w-14 h-14 bg-sparta-green/10 rounded-2xl flex items-center justify-center text-sparta-green">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
                             </svg>
                         </div>
-                        <h3 class="font-heading text-2xl font-bold text-slate-900">Misi</h3>
+                        <h3 class="font-heading text-3xl font-bold text-sparta-green">Misi</h3>
                     </div>
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
-                            <span class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span class="text-primary text-sm font-bold">1</span>
-                            </span>
-                            <span class="text-slate-600">Menyelenggarakan pendidikan berkualitas berbasis teknologi informasi dan komunikasi</span>
+                            <span class="w-8 h-8 bg-sparta-green rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">1</span>
+                            <span class="text-slate-700">Menyelenggarakan pendidikan berkualitas berbasis <strong>adab</strong> dan <strong>teknologi</strong></span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span class="text-primary text-sm font-bold">2</span>
-                            </span>
-                            <span class="text-slate-600">Membentuk karakter siswa yang berakhlak mulia, disiplin, dan bertanggung jawab</span>
+                            <span class="w-8 h-8 bg-sparta-green rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">2</span>
+                            <span class="text-slate-700">Membentuk karakter siswa yang <strong>spiritual</strong>, <strong>profesional</strong>, dan <strong>bertanggung jawab</strong></span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span class="text-primary text-sm font-bold">3</span>
-                            </span>
-                            <span class="text-slate-600">Mengembangkan potensi siswa dalam bidang akademik dan non-akademik</span>
+                            <span class="w-8 h-8 bg-sparta-green rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">3</span>
+                            <span class="text-slate-700">Mengembangkan potensi siswa dalam bidang akademik dan non-akademik</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span class="text-primary text-sm font-bold">4</span>
-                            </span>
-                            <span class="text-slate-600">Menjalin kerjasama dengan orang tua dan masyarakat dalam pembentukan generasi unggul</span>
+                            <span class="w-8 h-8 bg-sparta-green rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">4</span>
+                            <span class="text-slate-700">Menjalin kerjasama dengan orang tua dan masyarakat</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Prinsip Pelaksanaan -->
+            <div class="mt-12 bg-sparta-green/5 rounded-3xl p-8 border border-sparta-green/10">
+                <h3 class="font-heading text-2xl font-bold text-sparta-green text-center mb-6">Prinsip Pelaksanaan</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                        <div class="text-sparta-gold font-bold text-lg mb-1">01</div>
+                        <div class="text-slate-700 font-medium text-sm">Berakhlak Mulia</div>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                        <div class="text-sparta-gold font-bold text-lg mb-1">02</div>
+                        <div class="text-slate-700 font-medium text-sm">Profesional</div>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                        <div class="text-sparta-gold font-bold text-lg mb-1">03</div>
+                        <div class="text-slate-700 font-medium text-sm">Adaptif</div>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                        <div class="text-sparta-gold font-bold text-lg mb-1">04</div>
+                        <div class="text-slate-700 font-medium text-sm">Bertanggung Jawab</div>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                        <div class="text-sparta-gold font-bold text-lg mb-1">05</div>
+                        <div class="text-slate-700 font-medium text-sm">Tangguh</div>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                        <div class="text-sparta-gold font-bold text-lg mb-1">06</div>
+                        <div class="text-slate-700 font-medium text-sm">Berprestasi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Unggulan Section -->
+    <section id="program" class="py-20 lg:py-28 bg-sparta-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Program</span>
+                <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-sparta-green mt-3 mb-4">
+                    Program Unggulan
+                </h2>
+                <div class="w-24 h-1 gold-gradient mx-auto rounded-full"></div>
+            </div>
+            
+            <!-- Program Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Strategi Integrasi Adab -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-green">
+                    <div class="w-14 h-14 bg-sparta-green/10 rounded-xl flex items-center justify-center text-sparta-green mb-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">Strategi Integrasi Adab</h3>
+                    <p class="text-slate-600 text-sm mb-3">Program Inti Pendidikan Karakter</p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Adab kepada Allah
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Adab kepada Sesama
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Adab kepada Lingkungan
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Adab kepada Diri Sendiri
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- SOP Pembiasaan -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-green">
+                    <div class="w-14 h-14 bg-sparta-green/10 rounded-xl flex items-center justify-center text-sparta-green mb-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">SOP Pembiasaan</h3>
+                    <p class="text-slate-600 text-sm mb-3">60 Detik Awal & 45 Detik Akhir</p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Pembukaan kelas terstruktur
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Penutupan dengan refleksi
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Pembiasaan doa dan dzikir
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Manajemen Kelas -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-green">
+                    <div class="w-14 h-14 bg-sparta-green/10 rounded-xl flex items-center justify-center text-sparta-green mb-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">Manajemen Kelas</h3>
+                    <p class="text-slate-600 text-sm mb-3">Berbasis Peran Siswa</p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Ketua & Wakil Kelas
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Sekretaris & Bendahara
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Petugas Kebersihan
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Petugas Keamanan
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Sistem Disiplin -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-green">
+                    <div class="w-14 h-14 bg-sparta-green/10 rounded-xl flex items-center justify-center text-sparta-green mb-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">Sistem Disiplin</h3>
+                    <p class="text-slate-600 text-sm mb-3">& Peran Wali Kelas</p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Pendekatan Restorative Justice
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Coaching & Mentoring
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Pendekatan kasih sayang
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Adab Digital -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-green">
+                    <div class="w-14 h-14 bg-sparta-green/10 rounded-xl flex items-center justify-center text-sparta-green mb-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">Adab Digital</h3>
+                    <p class="text-slate-600 text-sm mb-3">Pengelolaan HP Terkontrol</p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Digital Etiquette
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Penggunaan gadget teratur
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Media literacy
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Program MBG -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-green">
+                    <div class="w-14 h-14 bg-sparta-green/10 rounded-xl flex items-center justify-center text-sparta-green mb-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">Program MBG</h3>
+                    <p class="text-slate-600 text-sm mb-3">Makan Bergizi Gratis Berbasis Adab</p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Menu bergizi seimbang
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Pembiasaan adab makan
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 bg-sparta-gold rounded-full"></span>
+                            Dukungan gizi harian
                         </li>
                     </ul>
                 </div>
@@ -289,221 +537,296 @@
         </div>
     </section>
 
-    <!-- Struktur Organisasi Section -->
-    <section id="struktur" class="py-20 lg:py-28 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-            <div class="text-center mb-16">
-                <span class="text-primary font-semibold text-sm tracking-wider uppercase">Struktur Organisasi</span>
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
-                    Pimpinan Sekolah
+    <!-- Flagship Program: PRISMA -->
+    <section class="py-20 lg:py-28 sparta-gradient relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative">
+            <div class="text-center mb-12">
+                <span class="inline-block bg-white/20 backdrop-blur-sm text-sparta-gold px-4 py-1 rounded-full text-sm font-semibold mb-4">Flagship Program</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white mb-4">
+                    PRISMA
                 </h2>
-                <div class="w-16 h-1 bg-primary mx-auto"></div>
+                <p class="text-xl text-white/90">Program Integrasi Adab</p>
             </div>
             
-            <!-- Kepala Sekolah -->
-            <div class="max-w-md mx-auto mb-12">
-                <div class="bg-white rounded-2xl p-8 text-center shadow-lg border-t-4 border-primary">
-                    <div class="w-24 h-24 bg-gradient-to-br from-primary to-primary-dark rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">
-                        KS
+            <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/20">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="flex items-start gap-4 mb-6">
+                            <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-red-400 font-bold text-lg mb-1">BUKAN</h3>
+                                <p class="text-white/80">Sekadar aturan ketat yang menakutkan</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-green-400 font-bold text-lg mb-1">ADALAH</h3>
+                                <p class="text-white/80">Internalisasi nilai-nilai adab dalam kehidupan sehari-hari</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-1">Drs. H. Mustain Romly</h3>
-                    <p class="text-primary font-medium">Kepala Sekolah</p>
-                </div>
-            </div>
-            
-            <!-- Bagian Struktur -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white rounded-xl p-6 text-center shadow hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-slate-100 rounded-full mx-auto mb-3 flex items-center justify-center text-primary text-xl font-bold">W1</div>
-                    <h4 class="font-semibold text-slate-900 mb-1">Wakasek Kesiswaan</h4>
-                    <p class="text-sm text-slate-500">Koordinasi kegiatan siswa</p>
-                </div>
-                
-                <div class="bg-white rounded-xl p-6 text-center shadow hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-slate-100 rounded-full mx-auto mb-3 flex items-center justify-center text-primary text-xl font-bold">W2</div>
-                    <h4 class="font-semibold text-slate-900 mb-1">Wakasek Kurikulum</h4>
-                    <p class="text-sm text-slate-500">Pengembangan pembelajaran</p>
-                </div>
-                
-                <div class="bg-white rounded-xl p-6 text-center shadow hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-slate-100 rounded-full mx-auto mb-3 flex items-center justify-center text-primary text-xl font-bold">W3</div>
-                    <h4 class="font-semibold text-slate-900 mb-1">Wakasek Kesiswaan</h4>
-                    <p class="text-sm text-slate-500">Bimbingan dan konseling</p>
-                </div>
-                
-                <div class="bg-white rounded-xl p-6 text-center shadow hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-slate-100 rounded-full mx-auto mb-3 flex items-center justify-center text-primary text-xl font-bold">TU</div>
-                    <h4 class="font-semibold text-slate-900 mb-1">Tata Usaha</h4>
-                    <p class="text-sm text-slate-500">Administrasi sekolah</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galeri Kegiatan Section -->
-    <section id="galeri" class="py-20 lg:py-28 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-            <div class="text-center mb-16">
-                <span class="text-primary font-semibold text-sm tracking-wider uppercase">Galeri</span>
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
-                    Kegiatan Sekolah
-                </h2>
-                <div class="w-16 h-1 bg-primary mx-auto mb-4"></div>
-                <p class="text-slate-600 max-w-2xl mx-auto">Dokumentasi aktivitas dan prestasi siswa-siswi kami</p>
-            </div>
-            
-            <!-- Gallery Grid -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                        <span class="text-slate-400">Upacara Bendera</span>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-white font-medium">Upacara Bendera Hari Senin</span>
+                    
+                    <div class="text-center md:text-left">
+                        <div class="inline-block bg-sparta-gold/20 backdrop-blur-sm rounded-2xl p-6 border border-sparta-gold/30">
+                            <h4 class="text-sparta-gold font-heading font-bold text-xl mb-3">Output PRISMA</h4>
+                            <p class="text-white text-lg leading-relaxed">
+                                Lulusan berakhlak mulia yang mampu <span class="text-sparta-gold font-semibold">mengamalkan adab</span> dalam kehidupan sehari-hari
+                            </p>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
-                    <div class="absolute inset-0 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                        <span class="text-slate-400">Praktikum Lab</span>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-white font-medium">Kegiatan Praktikum di Laboratorium</span>
-                    </div>
-                </div>
-                
-                <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
-                    <div class="absolute inset-0 bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center">
-                        <span class="text-slate-400">Lomba Olahraga</span>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-white font-medium">Pekan Olahraga Siswa</span>
-                    </div>
-                </div>
-                
-                <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
-                    <div class="absolute inset-0 bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
-                        <span class="text-slate-400">Pentas Seni</span>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-white font-medium">Pentas Seni Tahunan</span>
-                    </div>
-                </div>
-                
-                <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
-                    <div class="absolute inset-0 bg-gradient-to-br from-pink-100 to-pink-200 flex items-center justify-center">
-                        <span class="text-slate-400">Study Tour</span>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-white font-medium">Study Tour Edukasi</span>
-                    </div>
-                </div>
-                
-                <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
-                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-100 to-cyan-200 flex items-center justify-center">
-                        <span class="text-slate-400">Graduation</span>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-white font-medium">Wisuda Kelulusan</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-10">
-                <a href="#kontak" class="inline-flex items-center gap-2 text-primary font-medium hover:underline">
-                    Lihat lebih banyak aktivitas
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
-                </a>
             </div>
         </div>
     </section>
 
     <!-- Fasilitas Section -->
-    <section id="fasilitas" class="py-20 lg:py-28 bg-slate-50">
+    <section id="fasilitas" class="py-20 lg:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="text-center mb-16">
-                <span class="text-primary font-semibold text-sm tracking-wider uppercase">Fasilitas</span>
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
-                    Fasilitas Unggulan Kami
+                <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Fasilitas</span>
+                <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-sparta-green mt-3 mb-4">
+                    Fasilitas Unggulan
                 </h2>
-                <div class="w-16 h-1 bg-primary mx-auto mb-4"></div>
-                <p class="text-slate-600 max-w-2xl mx-auto">Dukungan fasilitas modern untuk mendukung proses pembelajaran yang optimal</p>
+                <div class="w-24 h-1 gold-gradient mx-auto rounded-full"></div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="h-56 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                        <svg class="w-20 h-20 text-primary/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Lab Komputer</h3>
-                        <p class="text-slate-600">Laboratorium komputer dengan perangkat terbaru dan koneksi internet cepat untuk praktik pembelajaran IT.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="h-56 bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center">
-                        <svg class="w-20 h-20 text-amber-600/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- RULISA -->
+                <div class="bg-sparta-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-sparta-green to-sparta-green-light flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                         </svg>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Perpustakaan</h3>
-                        <p class="text-slate-600">Koleksi buku lengkap dengan ruang baca nyaman dan akses ke perpustakaan digital.</p>
+                        <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">RULISA</h3>
+                        <p class="text-sm text-sparta-gold font-medium mb-3">Ruang Literasi & Relaksasi</p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-center gap-2">
+                                <span class="text-sparta-green">✓</span> Ruang baca nyaman
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-sparta-green">✓</span> Area relaksasi
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-sparta-green">✓</span> Internet corner
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="h-56 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                        <svg class="w-20 h-20 text-green-600/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                <!-- Tim Media Siswa -->
+                <div class="bg-sparta-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                         </svg>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Ruang Kelas</h3>
-                        <p class="text-slate-600">Ruang kelas yang nyaman, bersih, dan dilengkapi dengan proyektor serta AC untuk kenyamanan belajar.</p>
+                        <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">Tim Media Siswa</h3>
+                        <p class="text-sm text-sparta-gold font-medium mb-3">Laboratorium Literasi Digital</p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-center gap-2">
+                                <span class="text-sparta-green">✓</span> Pelatihan konten kreator
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-sparta-green">✓</span> Podcast & video production
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-sparta-green">✓</span> Media literacy
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="h-56 bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
-                        <svg class="w-20 h-20 text-purple-600/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                <!-- BMPS -->
+                <div class="bg-sparta-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
                         </svg>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Lapangan & Ekstrakurikuler</h3>
-                        <p class="text-slate-600">Lapangan olahraga luas dan berbagai kegiatan ekstrakurikuler untuk pengembangan bakat siswa.</p>
+                        <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">BMPS</h3>
+                        <p class="text-sm text-sparta-gold font-medium mb-3">Bank Media Pembelajaran</p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-center gap-2">
+                                <span class="text-sparta-green">✓</span> Repositori materi
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-sparta-green">✓</span> Video pembelajaran
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-sparta-green">✓</span> Bank soal & evaluasi
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Form Pendaftaran Section -->
-    <section id="daftar" class="py-20 lg:py-28 bg-white">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
-            <div class="text-center mb-12">
-                <span class="text-primary font-semibold text-sm tracking-wider uppercase">Pendaftaran</span>
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
-                    Daftar Sekarang
+    <!-- Profil Lulusan Section -->
+    <section class="py-20 lg:py-28 bg-sparta-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Output</span>
+                <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-sparta-green mt-3 mb-4">
+                    Profil Lulusan SPARTA
                 </h2>
-                <div class="w-16 h-1 bg-primary mx-auto mb-4"></div>
-                <p class="text-slate-600">Isi formulir di bawah untuk mendaftarkan putra/putri Anda</p>
+                <div class="w-24 h-1 gold-gradient mx-auto rounded-full"></div>
             </div>
             
-            <div class="bg-white rounded-2xl shadow-xl p-8 sm:p-10 border border-slate-100">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 sparta-gradient rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">1</div>
+                    <h3 class="font-heading font-bold text-sparta-green">Berakhlak Mulia</h3>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 sparta-gradient rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">2</div>
+                    <h3 class="font-heading font-bold text-sparta-green">Berprestasi</h3>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 sparta-gradient rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">3</div>
+                    <h3 class="font-heading font-bold text-sparta-green">Berwawasan Global</h3>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 sparta-gradient rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">4</div>
+                    <h3 class="font-heading font-bold text-sparta-green">Berjiwa Entrepreneur</h3>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 sparta-gradient rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">5</div>
+                    <h3 class="font-heading font-bold text-sparta-green">Berkarakter Tangguh</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Komitmen Bersama Section -->
+    <section class="py-20 lg:py-28 sparta-gradient relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-sparta-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center relative">
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-6">
+                Komitmen Bersama
+            </h2>
+            <blockquote class="text-2xl sm:text-3xl text-white/95 italic leading-relaxed mb-8">
+                "Mewujudkan sekolah berakhlak pesantren yang <span class="text-sparta-gold font-semibold">nyaman</span>, <span class="text-sparta-gold font-semibold">relevan</span>, dan <span class="text-sparta-gold font-semibold">membangunakan</span>."
+            </blockquote>
+            <div class="inline-flex items-center gap-2 text-sparta-gold font-semibold">
+                <span class="w-12 h-0.5 bg-sparta-gold"></span>
+                SMP SPARTA
+                <span class="w-12 h-0.5 bg-sparta-gold"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Section -->
+    <section id="galeri" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Galeri</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-sparta-green mt-3 mb-4">
+                    Kegiatan Sekolah
+                </h2>
+                <div class="w-24 h-1 gold-gradient mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
+                    <div class="absolute inset-0 bg-gradient-to-br from-sparta-green/20 to-sparta-green/40 flex items-center justify-center">
+                        <span class="text-sparta-green font-semibold">Kegiatan PRISMA</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-medium">Program Integrasi Adab</span>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-blue-500/40 flex items-center justify-center">
+                        <span class="text-blue-700 font-semibold">RULISA</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-medium">Ruang Literasi & Relaksasi</span>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-purple-500/40 flex items-center justify-center">
+                        <span class="text-purple-700 font-semibold">Tim Media</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-medium">Laboratorium Literasi Digital</span>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
+                    <div class="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-amber-500/40 flex items-center justify-center">
+                        <span class="text-amber-700 font-semibold">Program MBG</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-medium">Makan Bergizi Gratis</span>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
+                    <div class="absolute inset-0 bg-gradient-to-br from-rose-500/20 to-rose-500/40 flex items-center justify-center">
+                        <span class="text-rose-700 font-semibold">Ekstrakurikuler</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-medium">Pengembangan Bakat</span>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-cyan-500/40 flex items-center justify-center">
+                        <span class="text-cyan-700 font-semibold">Kegiatan Akademik</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-medium">Pembelajaran & Prestasi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="daftar" class="py-20 lg:py-28 bg-sparta-cream">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="text-center mb-12">
+                <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Pendaftaran</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-sparta-green mt-3 mb-4">
+                    Daftar Sekarang
+                </h2>
+                <div class="w-24 h-1 gold-gradient mx-auto rounded-full mb-4"></div>
+                <p class="text-slate-600">Bergabunglah dengan keluarga besar SMP SPARTA</p>
+            </div>
+            
+            <div class="bg-white rounded-3xl shadow-xl p-8 sm:p-10 border border-sparta-gold/10">
                 <form id="registration-form" class="space-y-6">
                     <div>
                         <label for="nama-siswa" class="block text-sm font-medium text-slate-700 mb-2">
                             Nama Lengkap Siswa <span class="text-red-500">*</span>
                         </label>
                         <input type="text" id="nama-siswa" name="nama_siswa" required
-                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-green focus:border-sparta-green transition-all outline-none"
                             placeholder="Masukkan nama lengkap siswa">
                     </div>
                     
@@ -512,7 +835,7 @@
                             Nama Orang Tua/Wali <span class="text-red-500">*</span>
                         </label>
                         <input type="text" id="nama-ortu" name="nama_ortu" required
-                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-green focus:border-sparta-green transition-all outline-none"
                             placeholder="Masukkan nama orang tua/wali">
                     </div>
                     
@@ -522,7 +845,7 @@
                                 Nomor HP/WA <span class="text-red-500">*</span>
                             </label>
                             <input type="tel" id="no-hp" name="no_hp" required
-                                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none"
+                                class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-green focus:border-sparta-green transition-all outline-none"
                                 placeholder="Contoh: 08123456789">
                         </div>
                         
@@ -531,7 +854,7 @@
                                 Email
                             </label>
                             <input type="email" id="email" name="email"
-                                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none"
+                                class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-green focus:border-sparta-green transition-all outline-none"
                                 placeholder="email@example.com">
                         </div>
                     </div>
@@ -541,7 +864,7 @@
                             Asal Sekolah (SD) <span class="text-red-500">*</span>
                         </label>
                         <input type="text" id="asal-sekolah" name="asal_sekolah" required
-                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-green focus:border-sparta-green transition-all outline-none"
                             placeholder="Masukkan nama SD asal">
                     </div>
                     
@@ -550,12 +873,12 @@
                             Alamat Lengkap <span class="text-red-500">*</span>
                         </label>
                         <textarea id="alamat" name="alamat" rows="3" required
-                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none resize-none"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-green focus:border-sparta-green transition-all outline-none resize-none"
                             placeholder="Masukkan alamat lengkap rumah"></textarea>
                     </div>
                     
                     <button type="submit" id="submit-btn"
-                        class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-4 rounded-xl transition-all hover:scale-[1.02] shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                        class="w-full sparta-gradient hover:opacity-90 text-white font-bold py-4 rounded-xl transition-all hover:scale-[1.02] shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
                         <span id="btn-text">Kirim Pendaftaran</span>
                         <div id="btn-loader" class="loader hidden"></div>
                     </button>
@@ -568,11 +891,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                     </div>
-                    <h3 class="font-heading text-2xl font-bold text-slate-900 mb-4">Pendaftaran Berhasil! 🎉</h3>
-                    <p class="text-slate-600 text-lg mb-2">Terima kasih telah mendaftar.</p>
+                    <h3 class="font-heading text-2xl font-bold text-sparta-green mb-4">Pendaftaran Berhasil! 🎉</h3>
+                    <p class="text-slate-600 text-lg mb-2">Terima kasih telah mendaftar di SMP SPARTA.</p>
                     <p class="text-slate-500">Tim kami akan menghubungi Anda segera melalui WhatsApp/telepon yang terdaftar.</p>
                     <div class="mt-8">
-                        <a href="/" class="inline-flex items-center gap-2 text-primary hover:underline">
+                        <a href="/" class="inline-flex items-center gap-2 text-sparta-green hover:underline font-medium">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
                             </svg>
@@ -584,93 +907,96 @@
         </div>
     </section>
 
-    <!-- Footer / Contact Section -->
-    <footer id="kontak" class="bg-slate-900 text-white">
+    <!-- Footer -->
+    <footer class="sparta-gradient text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16">
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <span class="text-primary-light font-semibold text-sm tracking-wider uppercase">Kontak Kami</span>
-                    <h2 class="font-heading text-3xl font-bold mt-3 mb-6">Hubungi Kami</h2>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1">Alamat</h4>
-                                <p class="text-slate-400">Jl. Pendidikan No. 123, Kota Anda, Indonesia</p>
-                            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-white font-heading font-bold text-xl">
+                            S
                         </div>
-                        
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1">Telepon</h4>
-                                <p class="text-slate-400">(021) 1234-5678</p>
-                            </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-xl">SMP Dr. Musta'in Romly</h3>
+                            <p class="text-sparta-gold text-sm font-medium">SMP SPARTA</p>
                         </div>
-                        
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1">Email</h4>
-                                <p class="text-slate-400">info@smpmustainromly.sch.id</p>
-                            </div>
-                        </div>
+                    </div>
+                    <p class="text-white/80 mb-6 max-w-md">
+                        Sekolah Menengah Pertama Unggulan Berbasis Adab yang mewujudkan sekolah berakhlak pesantren yang nyaman, relevan, dan membangunakan.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+                        </a>
                     </div>
                 </div>
                 
+                <!-- Kontak -->
                 <div>
-                    <div class="bg-slate-800 rounded-2xl p-4 h-64">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.1234567890123!2d112.3506733!3d-6.9202442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e77e90405ac8e35%3A0x9c60a3fd3df43f8b!2sSMP%20Dr.%20Musta'in%20Romly!5e0!3m2!1sen!2sid!4v1707123456789!5m2!1sen!2sid"
-                            width="100%" 
-                            height="100%" 
-                            style="border:0; border-radius: 12px;" 
-                            allowfullscreen="" 
-                            loading="lazy"
-                            class="rounded-xl">
-                        </iframe>
+                    <h4 class="font-heading font-bold text-lg mb-4">Kontak</h4>
+                    <ul class="space-y-3 text-white/80">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-sparta-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <span>Jl. Pendidikan No. 123, Paciran, Lamongan</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-sparta-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <span>(021) 1234-5678</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-sparta-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <span>info@smpmustainromly.sch.id</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Jam Operasional -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">Jam Operasional</h4>
+                    <ul class="space-y-3 text-white/80">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-sparta-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span>Senin - Sabtu<br>07:00 - 15:00 WIB</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <a href="/admin" class="inline-flex items-center gap-2 text-sparta-gold hover:text-white transition-colors text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                            </svg>
+                            Login Admin
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="border-t border-slate-800">
+        <div class="border-t border-white/10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-6">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-slate-400 text-sm">
-                        © 2026 SMP DR MUSTA'IN ROMLY. All rights reserved.
+                    <p class="text-white/60 text-sm">
+                        © 2026 SMP Dr. Musta'in Romly (SMP SPARTA). All rights reserved.
                     </p>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                            </svg>
-                        </a>
-                    </div>
+                    <p class="text-sparta-gold text-sm font-medium">
+                        Berakhlak • Profesional • Adaptif • Tangguh • Berprestasi
+                    </p>
                 </div>
             </div>
         </div>
@@ -754,20 +1080,6 @@
         
         // Prevent any default form submission
         form.setAttribute('onsubmit', 'return false;');
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
     </script>
 </body>
 </html>
