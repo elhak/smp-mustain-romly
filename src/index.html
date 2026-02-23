@@ -24,12 +24,13 @@
             theme: {
                 extend: {
                     colors: {
-                        'sparta-green': '#1a5f2a',
-                        'sparta-green-light': '#2d8a4e',
-                        'sparta-green-accent': '#4caf50',
-                        'sparta-gold': '#d4af37',
-                        'sparta-gold-light': '#f4d03f',
-                        'sparta-cream': '#f9f7f0',
+                        'sparta-blue': '#1e3a8a',
+                        'sparta-blue-light': '#3b82f6',
+                        'sparta-cyan': '#06b6d4',
+                        'sparta-violet': '#7c3aed',
+                        'sparta-gold': '#fbbf24',
+                        'sparta-gold-light': '#fcd34d',
+                        'sparta-cream': '#f0f7ff',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -48,14 +49,14 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .sparta-gradient {
-            background: linear-gradient(135deg, #1a5f2a 0%, #2d8a4e 50%, #1a5f2a 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #7c3aed 100%);
         }
         .gold-gradient {
-            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+            background: linear-gradient(135deg, #fbbf24 0%, #fcd34d 50%, #fbbf24 100%);
         }
         .loader {
             border: 3px solid #f3f3f3;
-            border-top: 3px solid #1a5f2a;
+            border-top: 3px solid #1e3a8a;
             border-radius: 50%;
             width: 20px;
             height: 20px;
@@ -78,7 +79,7 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         .islamic-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e3a8a' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         .hover-lift {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -112,27 +113,27 @@
                 <div class="flex items-center gap-3">
                     <img src="logo-yayasan.jpg" alt="Logo Yayasan Roudlotul Muta'abbidin" class="w-12 h-12 rounded-xl shadow-lg object-cover border-2 border-sparta-gold">
                     <div class="hidden sm:block">
-                        <span class="font-heading font-bold text-sparta-green block leading-tight">SMP Dr. Musta'in Romly</span>
+                        <span class="font-heading font-bold text-sparta-blue block leading-tight">SMP Dr. Musta'in Romly</span>
                         <span class="text-xs text-sparta-gold font-semibold tracking-wider">SMP SPARTA</span>
                     </div>
                 </div>
                 
                 <!-- Desktop Nav -->
                 <div class="hidden lg:flex items-center gap-6">
-                    <a href="#beranda" class="text-slate-600 hover:text-sparta-green font-medium transition-colors">Beranda</a>
-                    <a href="#filosofi" class="text-slate-600 hover:text-sparta-green font-medium transition-colors">Filosofi</a>
-                    <a href="#program" class="text-slate-600 hover:text-sparta-green font-medium transition-colors">Program</a>
-                    <a href="#pimpinan" class="text-slate-600 hover:text-sparta-green font-medium transition-colors">Pimpinan</a>
-                    <a href="#fasilitas" class="text-slate-600 hover:text-sparta-green font-medium transition-colors">Fasilitas</a>
-                    <a href="#testimoni" class="text-slate-600 hover:text-sparta-green font-medium transition-colors">Testimoni</a>
-                    <a href="#kontak" class="text-slate-600 hover:text-sparta-green font-medium transition-colors">Kontak</a>
-                    <a href="#daftar" class="bg-sparta-green hover:bg-sparta-green-light text-white px-6 py-2.5 rounded-full font-semibold transition-all hover:scale-105 shadow-lg hover:shadow-xl">
+                    <a href="#beranda" class="text-slate-600 hover:text-sparta-blue font-medium transition-colors">Beranda</a>
+                    <a href="#filosofi" class="text-slate-600 hover:text-sparta-blue font-medium transition-colors">Filosofi</a>
+                    <a href="#program" class="text-slate-600 hover:text-sparta-blue font-medium transition-colors">Program</a>
+                    <a href="#pimpinan" class="text-slate-600 hover:text-sparta-blue font-medium transition-colors">Pimpinan</a>
+                    <a href="#fasilitas" class="text-slate-600 hover:text-sparta-blue font-medium transition-colors">Fasilitas</a>
+                    <a href="#testimoni" class="text-slate-600 hover:text-sparta-blue font-medium transition-colors">Testimoni</a>
+                    <a href="#kontak" class="text-slate-600 hover:text-sparta-blue font-medium transition-colors">Kontak</a>
+                    <a href="#daftar" class="bg-sparta-blue hover:bg-sparta-blue-light text-white px-6 py-2.5 rounded-full font-semibold transition-all hover:scale-105 shadow-lg hover:shadow-xl">
                         Daftar
                     </a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-600 hover:text-sparta-green">
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-600 hover:text-sparta-blue">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -143,14 +144,14 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-sparta-gold/20">
             <div class="px-4 py-4 space-y-3">
-                <a href="#beranda" class="block py-2 text-slate-600 hover:text-sparta-green font-medium">Beranda</a>
-                <a href="#filosofi" class="block py-2 text-slate-600 hover:text-sparta-green font-medium">Filosofi SPARTA</a>
-                <a href="#program" class="block py-2 text-slate-600 hover:text-sparta-green font-medium">Program Unggulan</a>
-                <a href="#pimpinan" class="block py-2 text-slate-600 hover:text-sparta-green font-medium">Pimpinan</a>
-                <a href="#fasilitas" class="block py-2 text-slate-600 hover:text-sparta-green font-medium">Fasilitas</a>
-                <a href="#testimoni" class="block py-2 text-slate-600 hover:text-sparta-green font-medium">Testimoni</a>
-                <a href="#kontak" class="block py-2 text-slate-600 hover:text-sparta-green font-medium">Kontak</a>
-                <a href="#daftar" class="block bg-sparta-green text-white text-center py-3 rounded-full font-semibold mt-4">Daftar Sekarang</a>
+                <a href="#beranda" class="block py-2 text-slate-600 hover:text-sparta-blue font-medium">Beranda</a>
+                <a href="#filosofi" class="block py-2 text-slate-600 hover:text-sparta-blue font-medium">Filosofi SPARTA</a>
+                <a href="#program" class="block py-2 text-slate-600 hover:text-sparta-blue font-medium">Program Unggulan</a>
+                <a href="#pimpinan" class="block py-2 text-slate-600 hover:text-sparta-blue font-medium">Pimpinan</a>
+                <a href="#fasilitas" class="block py-2 text-slate-600 hover:text-sparta-blue font-medium">Fasilitas</a>
+                <a href="#testimoni" class="block py-2 text-slate-600 hover:text-sparta-blue font-medium">Testimoni</a>
+                <a href="#kontak" class="block py-2 text-slate-600 hover:text-sparta-blue font-medium">Kontak</a>
+                <a href="#daftar" class="block bg-sparta-blue text-white text-center py-3 rounded-full font-semibold mt-4">Daftar Sekarang</a>
             </div>
         </div>
     </nav>
@@ -183,7 +184,7 @@
                     </p>
                     
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#daftar" class="inline-flex items-center justify-center gap-2 bg-sparta-gold hover:bg-sparta-gold-light text-sparta-green px-8 py-4 rounded-full font-bold transition-all hover:scale-105 shadow-lg hover:shadow-xl">
+                        <a href="#daftar" class="inline-flex items-center justify-center gap-2 bg-sparta-gold hover:bg-sparta-gold-light text-sparta-blue px-8 py-4 rounded-full font-bold transition-all hover:scale-105 shadow-lg hover:shadow-xl">
                             Daftar Sekarang
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -225,11 +226,11 @@
     </section>
 
     <!-- Filosofi SPARTA Section -->
-    <section id="filosofi" class="py-20 lg:py-28 bg-sparta-cream">
+    <section id="filosofi" class="py-20 lg:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="text-center mb-16">
                 <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Filosofi</span>
-                <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-sparta-green mt-3 mb-4">
+                <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-sparta-blue mt-3 mb-4">
                     Filosofi SPARTA
                 </h2>
                 <div class="w-24 h-1 gold-gradient mx-auto rounded-full"></div>
@@ -245,7 +246,7 @@
                     <div class="sparta-circle sparta-gradient mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
                         S
                     </div>
-                    <h3 class="font-heading font-bold text-sparta-green mb-1">Spiritual</h3>
+                    <h3 class="font-heading font-bold text-sparta-blue mb-1">Spiritual</h3>
                     <p class="text-sm text-slate-600">Berakhlak Mulia</p>
                 </div>
                 
@@ -254,7 +255,7 @@
                     <div class="sparta-circle sparta-gradient mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
                         P
                     </div>
-                    <h3 class="font-heading font-bold text-sparta-green mb-1">Professional</h3>
+                    <h3 class="font-heading font-bold text-sparta-blue mb-1">Professional</h3>
                     <p class="text-sm text-slate-600">Profesional dalam Belajar</p>
                 </div>
                 
@@ -263,7 +264,7 @@
                     <div class="sparta-circle sparta-gradient mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
                         A
                     </div>
-                    <h3 class="font-heading font-bold text-sparta-green mb-1">Adaptive</h3>
+                    <h3 class="font-heading font-bold text-sparta-blue mb-1">Adaptive</h3>
                     <p class="text-sm text-slate-600">Adaptif terhadap Perubahan</p>
                 </div>
                 
@@ -272,7 +273,7 @@
                     <div class="sparta-circle sparta-gradient mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
                         R
                     </div>
-                    <h3 class="font-heading font-bold text-sparta-green mb-1">Responsible</h3>
+                    <h3 class="font-heading font-bold text-sparta-blue mb-1">Responsible</h3>
                     <p class="text-sm text-slate-600">Bertanggung Jawab</p>
                 </div>
                 
@@ -281,7 +282,7 @@
                     <div class="sparta-circle sparta-gradient mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
                         T
                     </div>
-                    <h3 class="font-heading font-bold text-sparta-green mb-1">Tough</h3>
+                    <h3 class="font-heading font-bold text-sparta-blue mb-1">Tough</h3>
                     <p class="text-sm text-slate-600">Tangguh dalam Tantangan</p>
                 </div>
                 
@@ -290,7 +291,7 @@
                     <div class="sparta-circle sparta-gradient mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
                         A
                     </div>
-                    <h3 class="font-heading font-bold text-sparta-green mb-1">Achiever</h3>
+                    <h3 class="font-heading font-bold text-sparta-blue mb-1">Achiever</h3>
                     <p class="text-sm text-slate-600">Berprestasi</p>
                 </div>
             </div>
@@ -298,11 +299,11 @@
     </section>
 
     <!-- Visi, Misi, Prinsip Section -->
-    <section id="visi-misi" class="py-20 lg:py-28 bg-white">
+    <section id="visi-misi" class="py-20 lg:py-28 bg-sparta-cream">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="text-center mb-16">
                 <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Visi & Misi</span>
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-sparta-green mt-3 mb-4">
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-sparta-blue mt-3 mb-4">
                     Arah dan Tujuan Kami
                 </h2>
                 <div class="w-24 h-1 gold-gradient mx-auto rounded-full"></div>
@@ -326,42 +327,42 @@
                 </div>
                 
                 <!-- Misi -->
-                <div class="bg-sparta-cream rounded-3xl p-8 sm:p-10 border-2 border-sparta-gold/20">
+                <div class="bg-white rounded-3xl p-8 sm:p-10 border-2 border-sparta-gold/20">
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-14 h-14 bg-sparta-green/10 rounded-2xl flex items-center justify-center text-sparta-green">
+                        <div class="w-14 h-14 bg-sparta-blue/10 rounded-2xl flex items-center justify-center text-sparta-blue">
                             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
                             </svg>
                         </div>
-                        <h3 class="font-heading text-3xl font-bold text-sparta-green">Misi</h3>
+                        <h3 class="font-heading text-3xl font-bold text-sparta-blue">Misi</h3>
                     </div>
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
-                            <span class="w-8 h-8 bg-sparta-green rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">1</span>
+                            <span class="w-8 h-8 bg-sparta-blue rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">1</span>
                             <span class="text-slate-700">Menanamkan <strong>adab dan nilai pesantren</strong> dalam seluruh kegiatan pembelajaran</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="w-8 h-8 bg-sparta-green rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">2</span>
+                            <span class="w-8 h-8 bg-sparta-blue rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">2</span>
                             <span class="text-slate-700">Menciptakan <strong>lingkungan belajar</strong> yang tertib, aman, dan nyaman bagi siswa</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="w-8 h-8 bg-sparta-green rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">3</span>
+                            <span class="w-8 h-8 bg-sparta-blue rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">3</span>
                             <span class="text-slate-700">Menyelenggarakan <strong>pembelajaran yang relevan</strong> dengan kebutuhan dan perkembangan siswa</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="w-8 h-8 bg-sparta-green rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">4</span>
+                            <span class="w-8 h-8 bg-sparta-blue rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">4</span>
                             <span class="text-slate-700">Menumbuhkan <strong>kemandirian dan tanggung jawab</strong> siswa dalam kehidupan sekolah</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="w-8 h-8 bg-sparta-green rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">5</span>
+                            <span class="w-8 h-8 bg-sparta-blue rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">5</span>
                             <span class="text-slate-700">Mendukung guru agar dapat <strong>mengajar secara efektif</strong> dan berkelanjutan</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="w-8 h-8 bg-sparta-green rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">6</span>
+                            <span class="w-8 h-8 bg-sparta-blue rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">6</span>
                             <span class="text-slate-700">Membiasakan <strong>budaya literasi, refleksi,</strong> dan jeda belajar yang sehat</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="w-8 h-8 bg-sparta-green rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">7</span>
+                            <span class="w-8 h-8 bg-sparta-blue rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">7</span>
                             <span class="text-slate-700">Memperluas wawasan siswa melalui <strong>pembelajaran kolaboratif</strong> dan pengalaman luar kelas</span>
                         </li>
                     </ul>
@@ -369,8 +370,8 @@
             </div>
             
             <!-- Prinsip Pelaksanaan -->
-            <div class="mt-12 bg-sparta-green/5 rounded-3xl p-8 border border-sparta-green/10">
-                <h3 class="font-heading text-2xl font-bold text-sparta-green text-center mb-6">Prinsip Pelaksanaan</h3>
+            <div class="mt-12 bg-sparta-blue/5 rounded-3xl p-8 border border-sparta-blue/10">
+                <h3 class="font-heading text-2xl font-bold text-sparta-blue text-center mb-6">Prinsip Pelaksanaan</h3>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                     <div class="text-center p-4 bg-white rounded-xl shadow-sm">
                         <div class="text-sparta-gold font-bold text-lg mb-1">01</div>
@@ -402,11 +403,11 @@
     </section>
 
     <!-- Pimpinan Section -->
-    <section id="pimpinan" class="py-20 lg:py-28 bg-sparta-cream">
+    <section id="pimpinan" class="py-20 lg:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="text-center mb-16">
                 <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Pimpinan</span>
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-sparta-green mt-3 mb-4">
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-sparta-blue mt-3 mb-4">
                     Struktur Pimpinan
                 </h2>
                 <div class="w-24 h-1 gold-gradient mx-auto rounded-full"></div>
@@ -419,29 +420,29 @@
                         KS
                     </div>
                     <div>
-                        <h3 class="font-heading text-xl font-bold text-sparta-green">Inda Roifatul Ma'rifah, S.Pd</h3>
+                        <h3 class="font-heading text-xl font-bold text-sparta-blue">Inda Roifatul Ma'rifah, S.Pd</h3>
                         <p class="text-sparta-gold font-medium">Kepala Sekolah</p>
                     </div>
                 </div>
                 
                 <!-- Wakil Kepala Kesiswaan -->
-                <div class="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-sparta-green flex items-center gap-6">
-                    <div class="w-20 h-20 bg-sparta-green/10 rounded-full flex items-center justify-center text-sparta-green font-heading font-bold text-2xl flex-shrink-0">
+                <div class="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-sparta-blue flex items-center gap-6">
+                    <div class="w-20 h-20 bg-sparta-blue/10 rounded-full flex items-center justify-center text-sparta-blue font-heading font-bold text-2xl flex-shrink-0">
                         WK
                     </div>
                     <div>
-                        <h3 class="font-heading text-xl font-bold text-sparta-green">Lailatul Afiyah, S.Pd</h3>
+                        <h3 class="font-heading text-xl font-bold text-sparta-blue">Lailatul Afiyah, S.Pd</h3>
                         <p class="text-slate-600 font-medium">Wakil Kepala Bag. Kesiswaan</p>
                     </div>
                 </div>
                 
                 <!-- Wakil Kepala Kurikulum -->
-                <div class="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-sparta-green flex items-center gap-6">
-                    <div class="w-20 h-20 bg-sparta-green/10 rounded-full flex items-center justify-center text-sparta-green font-heading font-bold text-2xl flex-shrink-0">
+                <div class="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-sparta-blue flex items-center gap-6">
+                    <div class="w-20 h-20 bg-sparta-blue/10 rounded-full flex items-center justify-center text-sparta-blue font-heading font-bold text-2xl flex-shrink-0">
                         WK
                     </div>
                     <div>
-                        <h3 class="font-heading text-xl font-bold text-sparta-green">Ahmad Muzayyin, S.Hum</h3>
+                        <h3 class="font-heading text-xl font-bold text-sparta-blue">Ahmad Muzayyin, S.Hum</h3>
                         <p class="text-slate-600 font-medium">Wakil Kepala Bag. Kurikulum</p>
                     </div>
                 </div>
@@ -454,7 +455,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="text-center mb-16">
                 <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Program</span>
-                <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-sparta-green mt-3 mb-4">
+                <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-sparta-blue mt-3 mb-4">
                     Program Unggulan
                 </h2>
                 <div class="w-24 h-1 gold-gradient mx-auto rounded-full"></div>
@@ -463,13 +464,13 @@
             <!-- Program Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Strategi Integrasi Adab -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-green">
-                    <div class="w-14 h-14 bg-sparta-green/10 rounded-xl flex items-center justify-center text-sparta-green mb-4">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-blue">
+                    <div class="w-14 h-14 bg-sparta-blue/10 rounded-xl flex items-center justify-center text-sparta-blue mb-4">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                         </svg>
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">Strategi Integrasi Adab</h3>
+                    <h3 class="font-heading text-xl font-bold text-sparta-blue mb-2">Strategi Integrasi Adab</h3>
                     <p class="text-slate-600 text-sm mb-3">Program Inti Pendidikan Karakter</p>
                     <ul class="space-y-2 text-sm text-slate-600">
                         <li class="flex items-center gap-2">
@@ -492,13 +493,13 @@
                 </div>
                 
                 <!-- SOP Pembiasaan -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-green">
-                    <div class="w-14 h-14 bg-sparta-green/10 rounded-xl flex items-center justify-center text-sparta-green mb-4">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-blue">
+                    <div class="w-14 h-14 bg-sparta-blue/10 rounded-xl flex items-center justify-center text-sparta-blue mb-4">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">SOP Pembiasaan</h3>
+                    <h3 class="font-heading text-xl font-bold text-sparta-blue mb-2">SOP Pembiasaan</h3>
                     <p class="text-slate-600 text-sm mb-3">60 Detik Awal & 45 Detik Akhir</p>
                     <ul class="space-y-2 text-sm text-slate-600">
                         <li class="flex items-center gap-2">
@@ -517,13 +518,13 @@
                 </div>
                 
                 <!-- Manajemen Kelas -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-green">
-                    <div class="w-14 h-14 bg-sparta-green/10 rounded-xl flex items-center justify-center text-sparta-green mb-4">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-blue">
+                    <div class="w-14 h-14 bg-sparta-blue/10 rounded-xl flex items-center justify-center text-sparta-blue mb-4">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                         </svg>
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">Manajemen Kelas</h3>
+                    <h3 class="font-heading text-xl font-bold text-sparta-blue mb-2">Manajemen Kelas</h3>
                     <p class="text-slate-600 text-sm mb-3">Berbasis Peran Siswa</p>
                     <ul class="space-y-2 text-sm text-slate-600">
                         <li class="flex items-center gap-2">
@@ -546,13 +547,13 @@
                 </div>
                 
                 <!-- Sistem Disiplin -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-green">
-                    <div class="w-14 h-14 bg-sparta-green/10 rounded-xl flex items-center justify-center text-sparta-green mb-4">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-blue">
+                    <div class="w-14 h-14 bg-sparta-blue/10 rounded-xl flex items-center justify-center text-sparta-blue mb-4">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                         </svg>
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">Sistem Disiplin</h3>
+                    <h3 class="font-heading text-xl font-bold text-sparta-blue mb-2">Sistem Disiplin</h3>
                     <p class="text-slate-600 text-sm mb-3">& Peran Wali Kelas</p>
                     <ul class="space-y-2 text-sm text-slate-600">
                         <li class="flex items-center gap-2">
@@ -571,13 +572,13 @@
                 </div>
                 
                 <!-- Adab Digital -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-green">
-                    <div class="w-14 h-14 bg-sparta-green/10 rounded-xl flex items-center justify-center text-sparta-green mb-4">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-blue">
+                    <div class="w-14 h-14 bg-sparta-blue/10 rounded-xl flex items-center justify-center text-sparta-blue mb-4">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                         </svg>
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">Adab Digital</h3>
+                    <h3 class="font-heading text-xl font-bold text-sparta-blue mb-2">Adab Digital</h3>
                     <p class="text-slate-600 text-sm mb-3">Pengelolaan HP Terkontrol</p>
                     <ul class="space-y-2 text-sm text-slate-600">
                         <li class="flex items-center gap-2">
@@ -596,13 +597,13 @@
                 </div>
                 
                 <!-- Program MBG -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-green">
-                    <div class="w-14 h-14 bg-sparta-green/10 rounded-xl flex items-center justify-center text-sparta-green mb-4">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border-t-4 border-sparta-blue">
+                    <div class="w-14 h-14 bg-sparta-blue/10 rounded-xl flex items-center justify-center text-sparta-blue mb-4">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
                         </svg>
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">Program MBG</h3>
+                    <h3 class="font-heading text-xl font-bold text-sparta-blue mb-2">Program MBG</h3>
                     <p class="text-slate-600 text-sm mb-3">Makan Bergizi Gratis Berbasis Adab</p>
                     <ul class="space-y-2 text-sm text-slate-600">
                         <li class="flex items-center gap-2">
@@ -682,7 +683,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="text-center mb-16">
                 <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Fasilitas</span>
-                <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-sparta-green mt-3 mb-4">
+                <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-sparta-blue mt-3 mb-4">
                     Fasilitas Unggulan
                 </h2>
                 <div class="w-24 h-1 gold-gradient mx-auto rounded-full"></div>
@@ -691,23 +692,23 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- RULISA -->
                 <div class="bg-sparta-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-sparta-green to-sparta-green-light flex items-center justify-center">
+                    <div class="h-48 bg-gradient-to-br from-sparta-blue to-sparta-blue-light flex items-center justify-center">
                         <svg class="w-20 h-20 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                         </svg>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">RULISA</h3>
+                        <h3 class="font-heading text-xl font-bold text-sparta-blue mb-2">RULISA</h3>
                         <p class="text-sm text-sparta-gold font-medium mb-3">Ruang Literasi & Relaksasi</p>
                         <ul class="space-y-2 text-slate-600 text-sm">
                             <li class="flex items-center gap-2">
-                                <span class="text-sparta-green">✓</span> Ruang baca nyaman
+                                <span class="text-sparta-blue">✓</span> Ruang baca nyaman
                             </li>
                             <li class="flex items-center gap-2">
-                                <span class="text-sparta-green">✓</span> Area relaksasi
+                                <span class="text-sparta-blue">✓</span> Area relaksasi
                             </li>
                             <li class="flex items-center gap-2">
-                                <span class="text-sparta-green">✓</span> Pojok Internet
+                                <span class="text-sparta-blue">✓</span> Pojok Internet
                             </li>
                         </ul>
                     </div>
@@ -715,23 +716,23 @@
                 
                 <!-- Tim Media Siswa -->
                 <div class="bg-sparta-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center">
+                    <div class="h-48 bg-gradient-to-br from-sparta-blue-light to-sparta-cyan flex items-center justify-center">
                         <svg class="w-20 h-20 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                         </svg>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">Tim Media Siswa</h3>
+                        <h3 class="font-heading text-xl font-bold text-sparta-blue mb-2">Tim Media Siswa</h3>
                         <p class="text-sm text-sparta-gold font-medium mb-3">Laboratorium Literasi Digital</p>
                         <ul class="space-y-2 text-slate-600 text-sm">
                             <li class="flex items-center gap-2">
-                                <span class="text-sparta-green">✓</span> Pelatihan Pembuat Konten
+                                <span class="text-sparta-blue">✓</span> Pelatihan Pembuat Konten
                             </li>
                             <li class="flex items-center gap-2">
-                                <span class="text-sparta-green">✓</span> Podcast & Produksi Video
+                                <span class="text-sparta-blue">✓</span> Podcast & Produksi Video
                             </li>
                             <li class="flex items-center gap-2">
-                                <span class="text-sparta-green">✓</span> Kecakapan Media
+                                <span class="text-sparta-blue">✓</span> Kecakapan Media
                             </li>
                         </ul>
                     </div>
@@ -739,23 +740,23 @@
                 
                 <!-- BMPS -->
                 <div class="bg-sparta-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-                    <div class="h-48 bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center">
+                    <div class="h-48 bg-gradient-to-br from-sparta-violet to-sparta-blue-light flex items-center justify-center">
                         <svg class="w-20 h-20 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
                         </svg>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-heading text-xl font-bold text-sparta-green mb-2">BMPS</h3>
+                        <h3 class="font-heading text-xl font-bold text-sparta-blue mb-2">BMPS</h3>
                         <p class="text-sm text-sparta-gold font-medium mb-3">Bank Media Pembelajaran</p>
                         <ul class="space-y-2 text-slate-600 text-sm">
                             <li class="flex items-center gap-2">
-                                <span class="text-sparta-green">✓</span> Repositori materi
+                                <span class="text-sparta-blue">✓</span> Repositori materi
                             </li>
                             <li class="flex items-center gap-2">
-                                <span class="text-sparta-green">✓</span> Video pembelajaran
+                                <span class="text-sparta-blue">✓</span> Video pembelajaran
                             </li>
                             <li class="flex items-center gap-2">
-                                <span class="text-sparta-green">✓</span> Bank soal & evaluasi
+                                <span class="text-sparta-blue">✓</span> Bank soal & evaluasi
                             </li>
                         </ul>
                     </div>
@@ -769,7 +770,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="text-center mb-16">
                 <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Hasil</span>
-                <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-sparta-green mt-3 mb-4">
+                <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-sparta-blue mt-3 mb-4">
                     Profil Lulusan SPARTA
                 </h2>
                 <div class="w-24 h-1 gold-gradient mx-auto rounded-full"></div>
@@ -778,27 +779,27 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                     <div class="w-16 h-16 sparta-gradient rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">1</div>
-                    <h3 class="font-heading font-bold text-sparta-green">Berakhlak Mulia</h3>
+                    <h3 class="font-heading font-bold text-sparta-blue">Berakhlak Mulia</h3>
                 </div>
                 
                 <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                     <div class="w-16 h-16 sparta-gradient rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">2</div>
-                    <h3 class="font-heading font-bold text-sparta-green">Berprestasi</h3>
+                    <h3 class="font-heading font-bold text-sparta-blue">Berprestasi</h3>
                 </div>
                 
                 <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                     <div class="w-16 h-16 sparta-gradient rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">3</div>
-                    <h3 class="font-heading font-bold text-sparta-green">Berwawasan Global</h3>
+                    <h3 class="font-heading font-bold text-sparta-blue">Berwawasan Global</h3>
                 </div>
                 
                 <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                     <div class="w-16 h-16 sparta-gradient rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">4</div>
-                    <h3 class="font-heading font-bold text-sparta-green">Berjiwa Wirausaha</h3>
+                    <h3 class="font-heading font-bold text-sparta-blue">Berjiwa Wirausaha</h3>
                 </div>
                 
                 <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                     <div class="w-16 h-16 sparta-gradient rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">5</div>
-                    <h3 class="font-heading font-bold text-sparta-green">Berkarakter Tangguh</h3>
+                    <h3 class="font-heading font-bold text-sparta-blue">Berkarakter Tangguh</h3>
                 </div>
             </div>
         </div>
@@ -829,7 +830,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="text-center mb-16">
                 <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Testimoni</span>
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-sparta-green mt-3 mb-4">
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-sparta-blue mt-3 mb-4">
                     Apa Kata Mereka?
                 </h2>
                 <div class="w-24 h-1 gold-gradient mx-auto rounded-full"></div>
@@ -849,9 +850,9 @@
                         "SMP SPARTA benar-benar mengubah cara pandang saya tentang pendidikan. Anak saya menjadi lebih disiplin dan berakhlak mulia."
                     </blockquote>
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-sparta-green/10 rounded-full flex items-center justify-center text-sparta-green font-bold">A</div>
+                        <div class="w-12 h-12 bg-sparta-blue/10 rounded-full flex items-center justify-center text-sparta-blue font-bold">A</div>
                         <div>
-                            <p class="font-semibold text-sparta-green">Ahmad S.</p>
+                            <p class="font-semibold text-sparta-blue">Ahmad S.</p>
                             <p class="text-sm text-slate-500">Orang Tua Siswa</p>
                         </div>
                     </div>
@@ -870,9 +871,9 @@
                         "Program PRISMA sangat membantu anak saya mengembangkan karakter positif. Sekolah yang nyaman untuk belajar."
                     </blockquote>
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-sparta-green/10 rounded-full flex items-center justify-center text-sparta-green font-bold">S</div>
+                        <div class="w-12 h-12 bg-sparta-blue/10 rounded-full flex items-center justify-center text-sparta-blue font-bold">S</div>
                         <div>
-                            <p class="font-semibold text-sparta-green">Siti R.</p>
+                            <p class="font-semibold text-sparta-blue">Siti R.</p>
                             <p class="text-sm text-slate-500">Orang Tua Siswa</p>
                         </div>
                     </div>
@@ -891,9 +892,9 @@
                         "Fasilitas RULISA sangat membantu anak saya dalam mengembangkan minat baca. Sekolah unggulan yang berbasis adab."
                     </blockquote>
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-sparta-green/10 rounded-full flex items-center justify-center text-sparta-green font-bold">M</div>
+                        <div class="w-12 h-12 bg-sparta-blue/10 rounded-full flex items-center justify-center text-sparta-blue font-bold">M</div>
                         <div>
-                            <p class="font-semibold text-sparta-green">Muhammad F.</p>
+                            <p class="font-semibold text-sparta-blue">Muhammad F.</p>
                             <p class="text-sm text-slate-500">Alumni SMP SPARTA</p>
                         </div>
                     </div>
@@ -936,7 +937,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="text-center mb-16">
                 <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Galeri</span>
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-sparta-green mt-3 mb-4">
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-sparta-blue mt-3 mb-4">
                     Kegiatan Sekolah
                 </h2>
                 <div class="w-24 h-1 gold-gradient mx-auto rounded-full"></div>
@@ -944,8 +945,8 @@
             
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
-                    <div class="absolute inset-0 bg-gradient-to-br from-sparta-green/20 to-sparta-green/40 flex items-center justify-center">
-                        <span class="text-sparta-green font-semibold">Kegiatan PRISMA</span>
+                    <div class="absolute inset-0 bg-gradient-to-br from-sparta-blue/20 to-sparta-violet/40 flex items-center justify-center">
+                        <span class="text-sparta-blue font-semibold">Kegiatan PRISMA</span>
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <span class="text-white font-medium">Program Integrasi Adab</span>
@@ -953,8 +954,8 @@
                 </div>
                 
                 <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-blue-500/40 flex items-center justify-center">
-                        <span class="text-blue-700 font-semibold">RULISA</span>
+                    <div class="absolute inset-0 bg-gradient-to-br from-sparta-blue-light/20 to-sparta-cyan/40 flex items-center justify-center">
+                        <span class="text-sparta-blue font-semibold">RULISA</span>
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <span class="text-white font-medium">Ruang Literasi & Relaksasi</span>
@@ -962,8 +963,8 @@
                 </div>
                 
                 <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
-                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-purple-500/40 flex items-center justify-center">
-                        <span class="text-purple-700 font-semibold">Tim Media</span>
+                    <div class="absolute inset-0 bg-gradient-to-br from-sparta-violet/20 to-sparta-blue-light/40 flex items-center justify-center">
+                        <span class="text-sparta-violet font-semibold">Tim Media</span>
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <span class="text-white font-medium">Laboratorium Literasi Digital</span>
@@ -971,7 +972,7 @@
                 </div>
                 
                 <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
-                    <div class="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-amber-500/40 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-br from-sparta-gold/20 to-sparta-gold-light/40 flex items-center justify-center">
                         <span class="text-amber-700 font-semibold">Program MBG</span>
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
@@ -989,8 +990,8 @@
                 </div>
                 
                 <div class="group relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
-                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-cyan-500/40 flex items-center justify-center">
-                        <span class="text-cyan-700 font-semibold">Kegiatan Akademik</span>
+                    <div class="absolute inset-0 bg-gradient-to-br from-sparta-cyan/20 to-sparta-cyan/40 flex items-center justify-center">
+                        <span class="text-sparta-blue font-semibold">Kegiatan Akademik</span>
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <span class="text-white font-medium">Pembelajaran & Prestasi</span>
@@ -1005,7 +1006,7 @@
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="text-center mb-12">
                 <span class="text-sparta-gold font-semibold text-sm tracking-wider uppercase">Pendaftaran</span>
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-sparta-green mt-3 mb-4">
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-sparta-blue mt-3 mb-4">
                     Daftar Sekarang
                 </h2>
                 <div class="w-24 h-1 gold-gradient mx-auto rounded-full mb-4"></div>
@@ -1019,7 +1020,7 @@
                             Nama Lengkap Siswa <span class="text-red-500">*</span>
                         </label>
                         <input type="text" id="nama-siswa" name="nama_siswa" required
-                            class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-green focus:border-sparta-green transition-all outline-none"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-blue focus:border-sparta-blue transition-all outline-none"
                             placeholder="Masukkan nama lengkap siswa">
                     </div>
                     
@@ -1028,7 +1029,7 @@
                             Nama Orang Tua/Wali <span class="text-red-500">*</span>
                         </label>
                         <input type="text" id="nama-ortu" name="nama_ortu" required
-                            class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-green focus:border-sparta-green transition-all outline-none"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-blue focus:border-sparta-blue transition-all outline-none"
                             placeholder="Masukkan nama orang tua/wali">
                     </div>
                     
@@ -1038,7 +1039,7 @@
                                 Nomor HP/WA <span class="text-red-500">*</span>
                             </label>
                             <input type="tel" id="no-hp" name="no_hp" required
-                                class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-green focus:border-sparta-green transition-all outline-none"
+                                class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-blue focus:border-sparta-blue transition-all outline-none"
                                 placeholder="Contoh: 08123456789">
                         </div>
                         
@@ -1047,7 +1048,7 @@
                                 Email
                             </label>
                             <input type="email" id="email" name="email"
-                                class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-green focus:border-sparta-green transition-all outline-none"
+                                class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-blue focus:border-sparta-blue transition-all outline-none"
                                 placeholder="email@example.com">
                         </div>
                     </div>
@@ -1057,7 +1058,7 @@
                             Asal Sekolah (SD) <span class="text-red-500">*</span>
                         </label>
                         <input type="text" id="asal-sekolah" name="asal_sekolah" required
-                            class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-green focus:border-sparta-green transition-all outline-none"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-blue focus:border-sparta-blue transition-all outline-none"
                             placeholder="Masukkan nama SD asal">
                     </div>
                     
@@ -1066,7 +1067,7 @@
                             Alamat Lengkap <span class="text-red-500">*</span>
                         </label>
                         <textarea id="alamat" name="alamat" rows="3" required
-                            class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-green focus:border-sparta-green transition-all outline-none resize-none"
+                            class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sparta-blue focus:border-sparta-blue transition-all outline-none resize-none"
                             placeholder="Masukkan alamat lengkap rumah"></textarea>
                     </div>
                     
@@ -1084,11 +1085,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                     </div>
-                    <h3 class="font-heading text-2xl font-bold text-sparta-green mb-4">Pendaftaran Berhasil! 🎉</h3>
+                    <h3 class="font-heading text-2xl font-bold text-sparta-blue mb-4">Pendaftaran Berhasil! 🎉</h3>
                     <p class="text-slate-600 text-lg mb-2">Terima kasih telah mendaftar di SMP SPARTA.</p>
                     <p class="text-slate-500">Tim kami akan memproses pendaftaran Anda. Silakan datang langsung ke sekolah untuk konfirmasi.</p>
                     <div class="mt-8">
-                        <a href="/" class="inline-flex items-center gap-2 text-sparta-green hover:underline font-medium">
+                        <a href="/" class="inline-flex items-center gap-2 text-sparta-blue hover:underline font-medium">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
                             </svg>
@@ -1101,7 +1102,7 @@
     </section>
 
     <!-- Sticky Mobile CTA -->
-    <a href="#daftar" class="sticky-cta bg-sparta-gold text-sparta-green px-6 py-3 rounded-full font-bold shadow-lg hover:bg-sparta-gold-light transition-colors lg:hidden">
+    <a href="#daftar" class="sticky-cta bg-sparta-gold text-sparta-blue px-6 py-3 rounded-full font-bold shadow-lg hover:bg-sparta-gold-light transition-colors lg:hidden">
         Daftar Sekarang
     </a>
 
