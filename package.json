@@ -1,7 +1,7 @@
 {
   "name": "smp-mustain-website",
   "version": "1.0.0",
-  "description": "SMP DR MUSTA'IN ROMLY Website with SQLite backend",
+  "description": "SMP Dr. Musta'in Romly Website with SQLite backend", 
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
