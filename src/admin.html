@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jodit@4/build/jodit.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jodit@4/build/jodit.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -289,26 +290,40 @@
             if (page === 'registrations') loadRegistrations();
         }
 
-        // TinyMCE
+        // Jodit WYSIWYG Editor (open-source)
         function initEditor() {
-            tinymce.init({
-                selector: '#gf-editor-box',
+            editorInstance = Jodit.make('#gf-editor-box', {
                 height: 420,
-                menubar: 'edit view insert format tools',
-                plugins: 'link lists image code table paste preview',
-                toolbar: 'undo redo | blocks | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat code',
-                content_style: 'body { font-family: Inter, sans-serif; font-size: 15px; }',
-                automatic_uploads: true,
-                images_upload_handler: uploadEditorImage,
-                setup: (editor) => {
-                    editorInstance = editor;
-                }
+                toolbar: 'undo, redo, |, bold, italic, underline, strikethrough, |, alignleft, aligncenter, alignright, alignjustify, |, ul, ol, |, link, image, |, removeFormat, source',
+                uploader: {
+                    insertImageAsBase64URI: false
+                },
+                filebrowser: {
+                    ajax: {
+                        url: `${LOCAL_API}/api/admin/school-activities/create-image`
+                    }
+                },
+                events: {
+                    afterUpload: function (e, file) {
+                        // handled via custom image handler below
+                    }
+                },
+                placeholder: 'Tulis konten kegiatan di sini...',
+                showCharsCounter: false,
+                showWordsCounter: false,
+                showStatusbar: false,
+                theme: 'default'
+            });
+
+            // Override image upload to use our backend
+            editorInstance.events.on('uploadImage', function (file) {
+                return uploadEditorImage(file);
             });
         }
 
-        async function uploadEditorImage(blobInfo) {
+        async function uploadEditorImage(file) {
             const formData = new FormData();
-            formData.append('cover_image', blobInfo.blob(), blobInfo.filename());
+            formData.append('cover_image', file, file.name || 'image.jpg');
             const response = await fetch(`${LOCAL_API}/api/admin/school-activities/create-image`, {
                 method: 'POST',
                 headers: { 'x-admin-password': currentPassword },
@@ -316,7 +331,7 @@
             });
             const data = await response.json();
             if (!data.url) throw new Error('Gagal upload gambar editor');
-            return data.url;
+            return { url: data.url };
         }
 
         // Dropzone
@@ -404,7 +419,7 @@
             galleryForm.reset();
             document.getElementById('gf-id').value = '';
             clearCoverPreview();
-            if (editorInstance) editorInstance.setContent('');
+            if (editorInstance) editorInstance.value = '';
             openGalleryModal();
         }
 
@@ -422,7 +437,7 @@
             document.getElementById('gf-title').value = item.title;
             document.getElementById('gf-summary').value = item.summary || '';
             document.getElementById('gf-published').value = item.published ? '1' : '0';
-            if (editorInstance) editorInstance.setContent(item.content_html || '');
+            if (editorInstance) editorInstance.value = item.content_html || '';
 
             if (item.cover_image) {
                 document.getElementById('gf-cover-img').src = item.cover_image;
@@ -459,7 +474,7 @@
             e.preventDefault();
             const id = document.getElementById('gf-id').value;
             const formData = new FormData(galleryForm);
-            formData.set('content_html', editorInstance ? editorInstance.getContent() : '');
+            formData.set('content_html', editorInstance ? editorInstance.value : '');
             if (coverFile) formData.set('cover_image', coverFile);
             formData.delete('id');
 
