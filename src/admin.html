@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Data Pendaftaran</title>
+    <title>Admin - SMP Dr. Musta'in Romly</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1e40af',
-                        'primary-dark': '#1e3a8a',
-                        'primary-light': '#3b82f6',
+                        'sparta-green': '#1a5f2a',
+                        'sparta-green-light': '#2d8a4e',
+                        'sparta-green-dark': '#0f4522',
+                        'sparta-gold': '#d4af37',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -26,331 +28,510 @@
     </script>
     <style>
         .login-screen { display: flex; }
-        .data-screen { display: none; }
-        .data-screen.active { display: block; }
+        .app-screen { display: none; }
+        .app-screen.active { display: block; }
         .login-screen.hidden { display: none; }
+        .menu-btn.active { background: rgba(26, 95, 42, 0.08); color: #1a5f2a; font-weight: 600; }
+        .modal { display: none; }
+        .modal.open { display: flex; }
+        .dropzone { border: 2px dashed rgba(26, 95, 42, 0.35); transition: all 0.2s ease; }
+        .dropzone.dragover { border-color: #1a5f2a; background: rgba(26, 95, 42, 0.04); }
     </style>
 </head>
-<body class="font-sans text-slate-800 antialiased bg-slate-50">
-    
+<body class="font-sans text-slate-800 antialiased bg-slate-50 min-h-screen">
     <!-- Login Screen -->
-    <div id="loginScreen" class="login-screen min-h-screen items-center justify-center">
-        <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md mx-4">
+    <div id="loginScreen" class="login-screen min-h-screen items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
             <div class="text-center mb-8">
-                <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
-                    A
-                </div>
+                <div class="w-16 h-16 bg-sparta-green rounded-xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">S</div>
                 <h1 class="text-2xl font-bold text-slate-900">Admin Panel</h1>
-                <p class="text-slate-500 mt-2">SMP DR MUSTA'IN ROMLY</p>
+                <p class="text-slate-500 mt-2">SMP Dr. Musta'in Romly</p>
             </div>
-            
             <form id="loginForm" class="space-y-4">
                 <div>
                     <label class="block text-sm font-medium text-slate-700 mb-2">Password</label>
-                    <input 
-                        type="password" 
-                        id="password" 
-                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none"
-                        placeholder="Masukkan password admin"
-                        required
-                    >
+                    <input type="password" id="password" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-sparta-green focus:border-sparta-green outline-none" placeholder="Masukkan password admin" required>
                 </div>
-                
                 <p id="errorMsg" class="text-red-500 text-sm hidden">Password salah!</p>
-                
-                <button 
-                    type="submit" 
-                    class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 rounded-lg transition-colors"
-                >
-                    Login
-                </button>
+                <button type="submit" class="w-full bg-sparta-green hover:bg-sparta-green-dark text-white font-semibold py-3 rounded-lg transition-colors">Login</button>
             </form>
-            
             <div class="mt-6 text-center">
-                <a href="/" class="text-slate-500 hover:text-primary text-sm">← Kembali ke Website</a>
+                <a href="/" class="text-slate-500 hover:text-sparta-green text-sm">← Kembali ke Website</a>
             </div>
         </div>
     </div>
 
-    <!-- Data Screen -->
-    <div id="dataScreen" class="data-screen min-h-screen">
-        <!-- Header -->
-        <header class="bg-white shadow-sm border-b">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold">A</div>
-                        <div>
-                            <h1 class="font-semibold text-slate-900">Data Pendaftaran</h1>
-                            <p class="text-xs text-slate-500">SMP DR MUSTA'IN ROMLY</p>
-                        </div>
+    <!-- App Screen -->
+    <div id="appScreen" class="app-screen min-h-screen">
+        <header class="bg-white border-b sticky top-0 z-30">
+            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-sparta-green rounded-lg flex items-center justify-center text-white font-bold">S</div>
+                    <div>
+                        <p class="font-semibold text-slate-900 leading-tight">Admin CMS</p>
+                        <p class="text-xs text-slate-500">SMP Dr. Musta'in Romly</p>
                     </div>
-                    
-                    <div class="flex items-center gap-4">
-                        <button 
-                            onclick="loadData()" 
-                            class="text-slate-600 hover:text-primary flex items-center gap-2"
-                        >
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-                            </svg>
-                            Refresh
-                        </button>
-                        
-                        <button 
-                            onclick="logout()" 
-                            class="text-red-600 hover:text-red-700 text-sm font-medium"
-                        >
-                            Logout
-                        </button>
-                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="logout()" class="text-red-600 hover:text-red-700 text-sm font-medium">Logout</button>
                 </div>
             </div>
         </header>
 
-        <!-- Content -->
-        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            
-            <!-- Stats -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                <div class="bg-white p-6 rounded-xl shadow-sm border">
-                    <p class="text-sm text-slate-500">Total Pendaftar</p>
-                    <p id="totalCount" class="text-3xl font-bold text-primary mt-1">0</p>
-                </div>
-                
-                <div class="bg-white p-6 rounded-xl shadow-sm border">
-                    <p class="text-sm text-slate-500">Pendaftar Hari Ini</p>
-                    <p id="todayCount" class="text-3xl font-bold text-green-600 mt-1">0</p>
-                </div>
-                
-                <div class="bg-white p-6 rounded-xl shadow-sm border">
-                    <p class="text-sm text-slate-500">Terakhir Update</p>
-                    <p id="lastUpdate" class="text-lg font-medium text-slate-700 mt-1">-</p>
-                </div>
-            </div>
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="grid lg:grid-cols-[240px_1fr] gap-6">
+                <!-- Sidebar -->
+                <aside class="bg-white rounded-2xl border p-4 h-fit sticky top-24">
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 px-3">Menu</p>
+                    <div class="space-y-1">
+                        <button onclick="navigateTo('gallery')" id="menu-gallery" class="menu-btn w-full text-left px-3 py-2.5 rounded-xl text-sm text-slate-700 hover:bg-slate-50 flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs font-bold">📸</span>
+                            Kegiatan Sekolah / Galeri
+                        </button>
+                        <button onclick="navigateTo('registrations')" id="menu-registrations" class="menu-btn w-full text-left px-3 py-2.5 rounded-xl text-sm text-slate-700 hover:bg-slate-50 flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-xs font-bold">📋</span>
+                            Data Pendaftaran
+                        </button>
+                    </div>
+                </aside>
 
-            <!-- Table -->
-            <div class="bg-white rounded-xl shadow-sm border overflow-hidden">
-                <div class="p-4 border-b flex justify-between items-center">
-                    <h2 class="font-semibold text-slate-900">Daftar Pendaftar</h2>
-                    
-                    <button 
-                        onclick="exportToCSV()" 
-                        class="text-sm text-primary hover:underline"
-                    >
-                        Export CSV
-                    </button>
-                </div>
-                
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left">
-                        <thead class="bg-slate-50 text-slate-600">
-                            <tr>
-                                <th class="px-4 py-3 font-medium">ID</th>
-                                <th class="px-4 py-3 font-medium">Nama Siswa</th>
-                                <th class="px-4 py-3 font-medium">Orang Tua</th>
-                                <th class="px-4 py-3 font-medium">No. HP</th>
-                                <th class="px-4 py-3 font-medium">Email</th>
-                                <th class="px-4 py-3 font-medium">Asal Sekolah</th>
-                                <th class="px-4 py-3 font-medium">Alamat</th>
-                                <th class="px-4 py-3 font-medium">Waktu</th>
-                                <th class="px-4 py-3 font-medium">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableBody" class="divide-y">
-                            <!-- Data will be loaded here -->
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div id="emptyState" class="hidden text-center py-12">
-                    <svg class="w-16 h-16 text-slate-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                    </svg>
-                    <p class="text-slate-500">Belum ada data pendaftaran</p>
-                </div>
+                <!-- Content -->
+                <main>
+                    <!-- Gallery Page -->
+                    <div id="page-gallery" class="page hidden">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <h2 class="text-xl font-bold text-slate-900">Kegiatan Sekolah / Galeri</h2>
+                                <p class="text-sm text-slate-500 mt-1">Kelola konten kegiatan sekolah beserta gambar dan deskripsi detail.</p>
+                            </div>
+                            <button onclick="openCreateGallery()" class="bg-sparta-green hover:bg-sparta-green-dark text-white px-4 py-2.5 rounded-xl text-sm font-semibold shadow-sm">+ Tambah Kegiatan</button>
+                        </div>
+
+                        <div id="galleryList" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+                        <div id="galleryEmpty" class="hidden bg-white rounded-2xl border p-10 text-center text-slate-500">Belum ada kegiatan sekolah.</div>
+                    </div>
+
+                    <!-- Registrations Page -->
+                    <div id="page-registrations" class="page hidden">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <h2 class="text-xl font-bold text-slate-900">Data Pendaftaran</h2>
+                                <p class="text-sm text-slate-500 mt-1">Daftar pendaftar yang masuk melalui formulir website.</p>
+                            </div>
+                            <button onclick="loadRegistrations()" class="text-slate-600 hover:text-sparta-green text-sm font-medium">Refresh</button>
+                        </div>
+                        <div class="bg-white rounded-2xl border overflow-hidden">
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm text-left">
+                                    <thead class="bg-slate-50 text-slate-600">
+                                        <tr>
+                                            <th class="px-4 py-3 font-medium">ID</th>
+                                            <th class="px-4 py-3 font-medium">Nama Siswa</th>
+                                            <th class="px-4 py-3 font-medium">Orang Tua</th>
+                                            <th class="px-4 py-3 font-medium">No. HP</th>
+                                            <th class="px-4 py-3 font-medium">Asal Sekolah</th>
+                                            <th class="px-4 py-3 font-medium">Waktu</th>
+                                            <th class="px-4 py-3 font-medium">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="regTableBody" class="divide-y"></tbody>
+                                </table>
+                            </div>
+                            <div id="regEmpty" class="hidden text-center py-10 text-slate-500">Belum ada data pendaftaran.</div>
+                        </div>
+                    </div>
+                </main>
             </div>
-        </main>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal fixed inset-0 z-50 bg-black/50 items-start justify-center p-4 pt-10 overflow-y-auto">
+        <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl overflow-hidden">
+            <div class="flex items-center justify-between border-b px-6 py-4">
+                <h3 id="galleryModalTitle" class="text-lg font-bold text-slate-900">Tambah Kegiatan</h3>
+                <button onclick="closeGalleryModal()" class="text-slate-500 hover:text-slate-800 text-2xl leading-none">&times;</button>
+            </div>
+            <form id="galleryForm" class="p-6 space-y-6" enctype="multipart/form-data">
+                <input type="hidden" name="id" id="gf-id">
+                <div class="grid lg:grid-cols-[1fr_340px] gap-6">
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Judul Kegiatan <span class="text-red-500">*</span></label>
+                            <input type="text" name="title" id="gf-title" required class="w-full px-4 py-3 border rounded-xl outline-none focus:ring-2 focus:ring-sparta-green" placeholder="Contoh: Pembukaan PRISMA 2026">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Ringkasan</label>
+                            <textarea name="summary" id="gf-summary" rows="3" class="w-full px-4 py-3 border rounded-xl outline-none focus:ring-2 focus:ring-sparta-green resize-none" placeholder="Ringkasan singkat kegiatan"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Konten Detail (WYSIWYG) <span class="text-red-500">*</span></label>
+                            <textarea id="gf-content" class="hidden"></textarea>
+                            <div id="gf-editor-box" class="border rounded-xl overflow-hidden"></div>
+                        </div>
+                    </div>
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Status</label>
+                            <select name="published" id="gf-published" class="w-full px-4 py-3 border rounded-xl outline-none focus:ring-2 focus:ring-sparta-green">
+                                <option value="1">Published</option>
+                                <option value="0">Draft</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Cover Image</label>
+                            <div id="gf-dropzone" class="dropzone rounded-xl p-6 text-center cursor-pointer bg-slate-50">
+                                <input type="file" name="cover_image" id="gf-cover-input" accept="image/*" class="hidden">
+                                <p class="text-sm text-slate-600 font-medium">Klik atau seret gambar ke sini</p>
+                                <p class="text-xs text-slate-400 mt-1">Format: JPG, PNG, WebP. Maks 8MB.</p>
+                            </div>
+                            <div id="gf-cover-preview" class="mt-3 hidden relative">
+                                <img id="gf-cover-img" class="w-full rounded-xl object-cover aspect-video border" alt="Preview cover">
+                                <button type="button" onclick="clearCoverPreview()" class="absolute top-2 right-2 bg-white/90 text-red-600 text-xs px-2 py-1 rounded-lg shadow">Hapus</button>
+                            </div>
+                            <input type="hidden" name="keep_cover" id="gf-keep-cover" value="1">
+                        </div>
+                        <div class="bg-slate-50 rounded-xl border p-4 text-xs text-slate-500 leading-relaxed">
+                            <p><strong>Catatan:</strong> bagian konten mendukung format rich text. Anda bisa menulis paragraf, daftar, judul, tautan, hingga menyisipkan gambar dari URL eksternal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-end gap-3 border-t pt-5">
+                    <button type="button" onclick="closeGalleryModal()" class="px-5 py-2.5 rounded-xl border text-sm font-medium text-slate-700 hover:bg-slate-50">Batal</button>
+                    <button type="submit" class="px-6 py-2.5 rounded-xl bg-sparta-green hover:bg-sparta-green-dark text-white text-sm font-semibold shadow-sm">Simpan Kegiatan</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <script>
-        const API_URL = 'https://smp-mustain-romly.boosq.workers.dev';
-        let currentPassword = '';
+        const API_URL = window.location.origin.includes('localhost') ? 'http://localhost:3000' : 'https://smp-mustain-romly.boosq.workers.dev';
+        const LOCAL_API = window.location.origin;
+        let currentPassword = localStorage.getItem('smp_admin_password') || '';
+        let currentPage = 'gallery';
+        let editorInstance = null;
+        let galleryItems = [];
         let registrations = [];
+        let coverFile = null;
+        let keepCover = true;
 
-        // Login form
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+        // Elements
+        const loginScreen = document.getElementById('loginScreen');
+        const appScreen = document.getElementById('appScreen');
+        const loginForm = document.getElementById('loginForm');
+        const errorMsg = document.getElementById('errorMsg');
+        const galleryList = document.getElementById('galleryList');
+        const galleryEmpty = document.getElementById('galleryEmpty');
+        const galleryModal = document.getElementById('galleryModal');
+        const galleryForm = document.getElementById('galleryForm');
+        const regTableBody = document.getElementById('regTableBody');
+        const regEmpty = document.getElementById('regEmpty');
+
+        // Init
+        window.addEventListener('DOMContentLoaded', () => {
+            initEditor();
+            initDropzone();
+            if (currentPassword) {
+                showApp();
+                navigateTo(currentPage);
+            }
+        });
+
+        // Login
+        loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const password = document.getElementById('password').value;
-            
             try {
                 const response = await fetch(`${API_URL}/api/admin/registrations`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ password })
                 });
-                
                 const data = await response.json();
-                
                 if (data.success) {
                     currentPassword = password;
-                    registrations = data.data;
-                    showDataScreen();
-                    renderTable();
-                    updateStats();
+                    localStorage.setItem('smp_admin_password', password);
+                    errorMsg.classList.add('hidden');
+                    showApp();
+                    navigateTo(currentPage);
                 } else {
-                    document.getElementById('errorMsg').classList.remove('hidden');
+                    errorMsg.textContent = 'Password salah!';
+                    errorMsg.classList.remove('hidden');
                 }
             } catch (error) {
-                console.error('Login error:', error);
-                document.getElementById('errorMsg').textContent = 'Terjadi kesalahan koneksi';
-                document.getElementById('errorMsg').classList.remove('hidden');
+                errorMsg.textContent = 'Gagal terhubung ke server.';
+                errorMsg.classList.remove('hidden');
             }
         });
 
-        function showDataScreen() {
-            document.getElementById('loginScreen').classList.add('hidden');
-            document.getElementById('dataScreen').classList.add('active');
+        function showApp() {
+            loginScreen.classList.add('hidden');
+            appScreen.classList.add('active');
         }
 
         function logout() {
             currentPassword = '';
-            registrations = [];
-            document.getElementById('loginScreen').classList.remove('hidden');
-            document.getElementById('dataScreen').classList.remove('active');
+            localStorage.removeItem('smp_admin_password');
+            loginScreen.classList.remove('hidden');
+            appScreen.classList.remove('active');
             document.getElementById('password').value = '';
-            document.getElementById('errorMsg').classList.add('hidden');
         }
 
-        async function loadData() {
+        // Navigation
+        function navigateTo(page) {
+            currentPage = page;
+            document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+            document.getElementById(`page-${page}`).classList.remove('hidden');
+            document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(`menu-${page}`).classList.add('active');
+
+            if (page === 'gallery') loadGallery();
+            if (page === 'registrations') loadRegistrations();
+        }
+
+        // TinyMCE
+        function initEditor() {
+            tinymce.init({
+                selector: '#gf-editor-box',
+                height: 420,
+                menubar: 'edit view insert format tools',
+                plugins: 'link lists image code table paste preview',
+                toolbar: 'undo redo | blocks | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | removeformat code',
+                content_style: 'body { font-family: Inter, sans-serif; font-size: 15px; }',
+                automatic_uploads: true,
+                images_upload_handler: uploadEditorImage,
+                setup: (editor) => {
+                    editorInstance = editor;
+                }
+            });
+        }
+
+        async function uploadEditorImage(blobInfo) {
+            const formData = new FormData();
+            formData.append('cover_image', blobInfo.blob(), blobInfo.filename());
+            const response = await fetch(`${LOCAL_API}/api/admin/school-activities/create-image`, {
+                method: 'POST',
+                headers: { 'x-admin-password': currentPassword },
+                body: formData
+            });
+            const data = await response.json();
+            if (!data.url) throw new Error('Gagal upload gambar editor');
+            return data.url;
+        }
+
+        // Dropzone
+        function initDropzone() {
+            const dropzone = document.getElementById('gf-dropzone');
+            const input = document.getElementById('gf-cover-input');
+            dropzone.addEventListener('click', () => input.click());
+            dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
+            dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+            dropzone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropzone.classList.remove('dragover');
+                if (e.dataTransfer.files.length) setCoverFile(e.dataTransfer.files[0]);
+            });
+            input.addEventListener('change', (e) => {
+                if (e.target.files.length) setCoverFile(e.target.files[0]);
+            });
+        }
+
+        function setCoverFile(file) {
+            coverFile = file;
+            keepCover = false;
+            document.getElementById('gf-keep-cover').value = '0';
+            const preview = document.getElementById('gf-cover-preview');
+            document.getElementById('gf-cover-img').src = URL.createObjectURL(file);
+            preview.classList.remove('hidden');
+        }
+
+        function clearCoverPreview() {
+            coverFile = null;
+            keepCover = true;
+            document.getElementById('gf-keep-cover').value = '1';
+            document.getElementById('gf-cover-input').value = '';
+            document.getElementById('gf-cover-preview').classList.add('hidden');
+        }
+
+        // Gallery CRUD
+        async function loadGallery() {
             try {
-                const response = await fetch(`${API_URL}/api/admin/registrations`, {
+                const res = await fetch(`${LOCAL_API}/api/admin/school-activities`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ password: currentPassword })
                 });
-                
-                const data = await response.json();
-                
-                if (data.success) {
-                    registrations = data.data;
-                    renderTable();
-                    updateStats();
-                }
-            } catch (error) {
-                console.error('Load error:', error);
-                alert('Gagal memuat data');
+                const data = await res.json();
+                galleryItems = data.success ? data.data : [];
+                renderGallery();
+            } catch (e) {
+                console.error(e);
             }
         }
 
-        function renderTable() {
-            const tbody = document.getElementById('tableBody');
-            const emptyState = document.getElementById('emptyState');
-            
-            if (registrations.length === 0) {
-                tbody.innerHTML = '';
-                emptyState.classList.remove('hidden');
+        function renderGallery() {
+            if (!galleryItems.length) {
+                galleryList.innerHTML = '';
+                galleryEmpty.classList.remove('hidden');
                 return;
             }
-            
-            emptyState.classList.add('hidden');
-            
-            tbody.innerHTML = registrations.map(r => `
+            galleryEmpty.classList.add('hidden');
+            galleryList.innerHTML = galleryItems.map(item => `
+                <div class="bg-white border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="aspect-video bg-slate-100 overflow-hidden">
+                        ${item.cover_image ? `<img src="${item.cover_image}" alt="${escapeHtml(item.title)}" class="w-full h-full object-cover">` : `<div class="w-full h-full flex items-center justify-center text-slate-400 text-sm">Tanpa Cover</div>`}
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-start justify-between gap-3 mb-2">
+                            <h4 class="font-bold text-slate-900 leading-snug line-clamp-2">${escapeHtml(item.title)}</h4>
+                            <span class="shrink-0 px-2.5 py-1 rounded-full text-xs font-semibold ${item.published ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-700'}">${item.published ? 'Published' : 'Draft'}</span>
+                        </div>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-2">${escapeHtml(item.summary || '—')}</p>
+                        <div class="flex items-center justify-between text-xs text-slate-400">
+                            <span>${formatDate(item.created_at)}</span>
+                            <div class="flex items-center gap-2">
+                                <button onclick="openEditGallery(${item.id})" class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 font-medium hover:bg-slate-200">Edit</button>
+                                <button onclick="deleteGallery(${item.id})" class="px-3 py-1.5 rounded-lg bg-red-50 text-red-600 font-medium hover:bg-red-100">Hapus</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openCreateGallery() {
+            document.getElementById('galleryModalTitle').textContent = 'Tambah Kegiatan';
+            galleryForm.reset();
+            document.getElementById('gf-id').value = '';
+            clearCoverPreview();
+            if (editorInstance) editorInstance.setContent('');
+            openGalleryModal();
+        }
+
+        async function openEditGallery(id) {
+            const res = await fetch(`${LOCAL_API}/api/admin/school-activities/${id}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ password: currentPassword })
+            });
+            const data = await res.json();
+            if (!data.success) return alert('Gagal memuat data kegiatan.');
+            const item = data.data;
+            document.getElementById('galleryModalTitle').textContent = 'Edit Kegiatan';
+            document.getElementById('gf-id').value = item.id;
+            document.getElementById('gf-title').value = item.title;
+            document.getElementById('gf-summary').value = item.summary || '';
+            document.getElementById('gf-published').value = item.published ? '1' : '0';
+            if (editorInstance) editorInstance.setContent(item.content_html || '');
+
+            if (item.cover_image) {
+                document.getElementById('gf-cover-img').src = item.cover_image;
+                document.getElementById('gf-cover-preview').classList.remove('hidden');
+                keepCover = true;
+                document.getElementById('gf-keep-cover').value = '1';
+            } else {
+                clearCoverPreview();
+            }
+            openGalleryModal();
+        }
+
+        async function deleteGallery(id) {
+            if (!confirm('Hapus kegiatan ini?')) return;
+            await fetch(`${LOCAL_API}/api/admin/school-activities/${id}/delete`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ password: currentPassword })
+            });
+            loadGallery();
+        }
+
+        function openGalleryModal() {
+            galleryModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGalleryModal() {
+            galleryModal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        galleryForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('gf-id').value;
+            const formData = new FormData(galleryForm);
+            formData.set('content_html', editorInstance ? editorInstance.getContent() : '');
+            if (coverFile) formData.set('cover_image', coverFile);
+            formData.delete('id');
+
+            const url = id ? `${LOCAL_API}/api/admin/school-activities/${id}/update` : `${LOCAL_API}/api/admin/school-activities/add`;
+            await fetch(url, {
+                method: 'POST',
+                headers: { 'x-admin-password': currentPassword },
+                body: formData
+            });
+            closeGalleryModal();
+            loadGallery();
+        });
+
+        // Registrations
+        async function loadRegistrations() {
+            try {
+                const res = await fetch(`${API_URL}/api/admin/registrations`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password: currentPassword })
+                });
+                const data = await res.json();
+                registrations = data.success ? data.data : [];
+                renderRegistrations();
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function renderRegistrations() {
+            if (!registrations.length) {
+                regTableBody.innerHTML = '';
+                regEmpty.classList.remove('hidden');
+                return;
+            }
+            regEmpty.classList.add('hidden');
+            regTableBody.innerHTML = registrations.map(r => `
                 <tr class="hover:bg-slate-50">
                     <td class="px-4 py-3">${r.id}</td>
                     <td class="px-4 py-3 font-medium">${escapeHtml(r.nama_siswa)}</td>
                     <td class="px-4 py-3">${escapeHtml(r.nama_ortu)}</td>
                     <td class="px-4 py-3">${escapeHtml(r.no_hp)}</td>
-                    <td class="px-4 py-3">${r.email ? escapeHtml(r.email) : '-'}</td>
                     <td class="px-4 py-3">${escapeHtml(r.asal_sekolah)}</td>
-                    <td class="px-4 py-3 max-w-xs truncate">${escapeHtml(r.alamat)}</td>
                     <td class="px-4 py-3 text-slate-500">${formatDate(r.timestamp)}</td>
                     <td class="px-4 py-3">
-                        <button onclick="deleteRow(${r.id})" class="text-red-600 hover:text-red-700">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-                            </svg>
-                        </button>
+                        <button onclick="deleteRegistration(${r.id})" class="text-red-600 hover:text-red-700 text-sm font-medium">Hapus</button>
                     </td>
                 </tr>
             `).join('');
         }
 
-        function updateStats() {
-            document.getElementById('totalCount').textContent = registrations.length;
-            
-            const today = new Date().toDateString();
-            const todayCount = registrations.filter(r => 
-                new Date(r.timestamp).toDateString() === today
-            ).length;
-            document.getElementById('todayCount').textContent = todayCount;
-            
-            document.getElementById('lastUpdate').textContent = new Date().toLocaleString('id-ID');
+        async function deleteRegistration(id) {
+            if (!confirm('Hapus data ini?')) return;
+            await fetch(`${API_URL}/api/admin/delete`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ password: currentPassword, id })
+            });
+            loadRegistrations();
         }
 
-        async function deleteRow(id) {
-            if (!confirm('Hapus pendaftar ini?')) return;
-            
-            try {
-                const response = await fetch(`${API_URL}/api/admin/delete`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ password: currentPassword, id })
-                });
-                
-                const data = await response.json();
-                
-                if (data.success) {
-                    loadData();
-                }
-            } catch (error) {
-                console.error('Delete error:', error);
-                alert('Gagal menghapus data');
-            }
-        }
-
-        function exportToCSV() {
-            if (registrations.length === 0) {
-                alert('Tidak ada data untuk diekspor');
-                return;
-            }
-            
-            const headers = ['ID', 'Nama Siswa', 'Nama Ortu', 'No HP', 'Email', 'Asal Sekolah', 'Alamat', 'Timestamp'];
-            const rows = registrations.map(r => [
-                r.id,
-                r.nama_siswa,
-                r.nama_ortu,
-                r.no_hp,
-                r.email || '',
-                r.asal_sekolah,
-                r.alamat,
-                r.timestamp
-            ]);
-            
-            let csv = headers.join(',') + '\n';
-            csv += rows.map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(',')).join('\n');
-            
-            const blob = new Blob([csv], { type: 'text/csv' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `pendaftaran-${new Date().toISOString().split('T')[0]}.csv`;
-            a.click();
-        }
-
+        // Utils
         function escapeHtml(text) {
             const div = document.createElement('div');
-            div.textContent = text;
+            div.textContent = text || '';
             return div.innerHTML;
         }
 
         function formatDate(timestamp) {
+            if (!timestamp) return '—';
             return new Date(timestamp).toLocaleString('id-ID', {
-                day: '2-digit',
-                month: 'short',
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
+                day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit'
             });
         }
     </script>

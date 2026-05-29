@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kegiatan Sekolah - SMP Dr. Musta'in Romly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sparta-green': '#1a5f2a',
+                        'sparta-green-light': '#2d8a4e',
+                        'sparta-gold': '#d4af37',
+                        'sparta-cream': '#f9f7f0',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .prose h1, .prose h2, .prose h3, .prose h4 { font-family: 'Poppins', sans-serif; color: #1a5f2a; margin-top: 1.6rem; margin-bottom: 0.8rem; }
+        .prose h1 { font-size: 2rem; }
+        .prose h2 { font-size: 1.6rem; }
+        .prose h3 { font-size: 1.3rem; }
+        .prose p { margin-bottom: 1rem; line-height: 1.8; }
+        .prose ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 1rem; }
+        .prose ol { list-style: decimal; padding-left: 1.25rem; margin-bottom: 1rem; }
+        .prose li { margin-bottom: 0.4rem; }
+        .prose img { border-radius: 1rem; margin: 1.5rem 0; max-width: 100%; }
+        .prose blockquote { border-left: 4px solid #d4af37; padding-left: 1rem; color: #4b5563; font-style: italic; margin: 1.25rem 0; }
+        .rich-content img { border-radius: 1rem; margin: 1.25rem 0; max-width: 100%; }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-sparta-cream min-h-screen">
+    <nav class="bg-white border-b sticky top-0 z-30">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+            <a href="/" class="flex items-center gap-2 text-sparta-green font-heading font-bold">
+                <span class="w-9 h-9 bg-sparta-green text-white rounded-lg flex items-center justify-center text-sm">S</span>
+                SMP SPARTA
+            </a>
+            <a href="/#galeri" class="text-sm font-medium text-slate-600 hover:text-sparta-green">← Kembali ke Galeri</a>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+        <div id="loading" class="bg-white rounded-3xl border p-10 text-center text-slate-500">Memuat konten kegiatan...</div>
+        <div id="error" class="hidden bg-white rounded-3xl border p-10 text-center text-red-600">Konten tidak ditemukan.</div>
+        <article id="article" class="hidden bg-white rounded-3xl border overflow-hidden shadow-sm">
+            <div id="coverWrap" class="hidden aspect-[16/7] bg-slate-100 overflow-hidden">
+                <img id="coverImg" class="w-full h-full object-cover" alt="Cover kegiatan">
+            </div>
+            <div class="p-6 sm:p-10">
+                <p id="date" class="text-xs font-semibold text-sparta-gold tracking-wider uppercase mb-3"></p>
+                <h1 id="title" class="font-heading text-2xl sm:text-3xl font-bold text-sparta-green mb-4"></h1>
+                <p id="summary" class="text-slate-600 text-lg mb-8 leading-relaxed"></p>
+                <div id="content" class="prose rich-content text-slate-700"></div>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        const slug = window.location.pathname.replace(/^\/kegiatan\//, '').replace(/\/+$/, '');
+        const loadingEl = document.getElementById('loading');
+        const errorEl = document.getElementById('error');
+        const articleEl = document.getElementById('article');
+
+        (async () => {
+            try {
+                const res = await fetch(`/api/school-activities/${encodeURIComponent(slug)}`);
+                const data = await res.json();
+                if (!data.success || !data.data) throw new Error('Not found');
+                const item = data.data;
+
+                document.title = `${item.title} - SMP SPARTA`;
+                document.getElementById('title').textContent = item.title;
+                document.getElementById('summary').textContent = item.summary || '';
+                document.getElementById('date').textContent = formatDate(item.created_at);
+                document.getElementById('content').innerHTML = item.content_html || '';
+
+                if (item.cover_image) {
+                    document.getElementById('coverImg').src = item.cover_image;
+                    document.getElementById('coverWrap').classList.remove('hidden');
+                }
+
+                loadingEl.classList.add('hidden');
+                articleEl.classList.remove('hidden');
+            } catch (e) {
+                loadingEl.classList.add('hidden');
+                errorEl.classList.remove('hidden');
+            }
+        })();
+
+        function formatDate(timestamp) {
+            if (!timestamp) return '';
+            return new Date(timestamp).toLocaleString('id-ID', {
+                day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit'
+            });
+        }
+    </script>
+</body>
+</html>
